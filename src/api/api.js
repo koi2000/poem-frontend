@@ -19,11 +19,19 @@ export const generatePoem = (data) => {
     });
 }
 
+export const generatePoemByGPT = (data) => {
+    return Fetch({
+        method: "post",
+        url: `${tag}/generatePoemByGPT`,
+        data: data
+    });
+}
+
 // 生成藏头诗
 export const generateAcrostic = (data) => {
     return Fetch({
         method: "post",
-        url: `${tag}/generateAcrostic/`,
+        url: `${tag}/generateAcrostic`,
         data: data
     });
 }
@@ -32,7 +40,7 @@ export const generateAcrostic = (data) => {
 export const queryRelatedSentence = (data) => {
     return Fetch({
         method: "post",
-        url: `${tag}/nearestSentence/`,
+        url: `${tag}/nearestSentence`,
         data: data
     });
 }

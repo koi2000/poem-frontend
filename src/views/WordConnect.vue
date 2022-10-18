@@ -13,7 +13,7 @@
 import Fetch from "@/utils/Fetch";
 import * as d3 from 'd3';
 import {queryRelatedWord} from "@/api/api"
-
+import { Message } from "element-ui";
 export default {
   name: "WordConnect",
   data() {
@@ -23,7 +23,7 @@ export default {
       circle: undefined,
       edges_line: undefined,
       edges_text: undefined,
-      loading: false
+      loading: false,
     }
   },
   methods: {
@@ -34,7 +34,8 @@ export default {
         this.loading = false
       }).catch((reason) => {
         this.loading = false
-        alert(reason)
+        Message.error(reason)
+        // alert(reason)
       })
     },
     queryRelatedWord10(word) {
