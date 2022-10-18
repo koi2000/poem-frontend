@@ -36,7 +36,8 @@ import '../assets/style/font.less';
 import {generatePoem} from "@/api/api"
 import {generateAcrostic} from "@/api/api"
 import {queryRelatedSentence, generatePoemByGPT} from "@/api/api"
-import { Message } from "element-ui";
+import {Message} from "element-ui";
+
 export default {
   name: "GeneratePoem",
   data() {
@@ -75,8 +76,8 @@ export default {
       model: "GPT",
       poemNum: undefined,
       poemLength: undefined,
-      errorMessage:"",
-      precision:10000
+      errorMessage: "",
+      precision: 10000
     }
   },
   methods: {
@@ -102,7 +103,7 @@ export default {
         this.handlePromise(this.generateAcrostic10(this.inputSentence))
       } else if (this.selectEnum.querySameSentence === this.value) {
         this.loading = true
-        this.handlePromise(this.queryRelatedSentence10(this.inputSentence,this.precision))
+        this.handlePromise(this.queryRelatedSentence10(this.inputSentence, this.precision))
       }
     },
     generatePoemByGPT10(sentence, poemLength, poemNum) {
@@ -115,8 +116,8 @@ export default {
         return generatePoemByGPT(data).then((res) => {
           var sens = res.data.data
           this.sentences = ""
-          for(let i=0;i<sens.length;i++){
-            this.sentences+=sens[i]
+          for (let i = 0; i < sens.length; i++) {
+            this.sentences += sens[i]
           }
           this.sentences = this.sentences.split("。")
           this.sentences = this.sentences.map((item) => {
@@ -166,17 +167,17 @@ export default {
         })
       })
     },
-    queryRelatedSentence10(sentence,precision) {
-      let data={
-        "text":sentence,
-        "precision":precision
+    queryRelatedSentence10(sentence, precision) {
+      let data = {
+        "text": sentence,
+        "precision": precision,
+        "number":10
       }
       return queryRelatedSentence(data).then((res) => {
-        var sens = res.data.data
-        this.sentences = sens.split("。")
-        this.sentences.map((item) => {
-          return item + "。"
-        })
+        this.sentences = res.data.data
+        // this.sentences.map((item) => {
+        //   return item[0]
+        // })
       })
     }
   }

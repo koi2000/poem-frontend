@@ -23,7 +23,8 @@ export const generatePoemByGPT = (data) => {
     return Fetch({
         method: "post",
         url: `${tag}/generatePoemByGPT`,
-        data: data
+        data: data,
+        timeout: 30000
     });
 }
 
@@ -41,6 +42,7 @@ export const queryRelatedSentence = (data) => {
     return Fetch({
         method: "post",
         url: `${tag}/nearestSentence`,
-        data: data
+        data: data,
+        timeout: 1000
     });
 }
