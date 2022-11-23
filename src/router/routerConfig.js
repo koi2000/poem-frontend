@@ -15,6 +15,11 @@ const routes = [
         path: "GeneratePoem",
         name: "GeneratePoem",
         component:()=> import("../views/GeneratePoem.vue")
+    },
+    {
+        path: "QueryPoem",
+        name: "QueryPoem",
+        component:()=> import("../views/QueryPoem.vue")
     }
 ]
 export default routes

@@ -1,6 +1,6 @@
 <template>
   <div id="proot" v-loading="loading">
-    <b>请选择想要使用的模型</b> &nbsp
+    <div id="text"><b>请选择想要使用的模型</b> &nbsp</div>
     <el-select v-model="model" placeholder="请选择使用的模型">
       <el-option
           v-for="item in modelOption"
@@ -11,17 +11,28 @@
     </el-select>
     <div id="box">
       <el-input v-model="inputSentence"/>
-      <el-select v-if="model===modelSelectEnum.LSTM" v-model="value" placeholder="请选择">
+      <el-select v-if="model===modelSelectEnum.LSTM" v-model="value" placeholder="LSTM中模式的选择">
         <el-option
-            v-for="item in options"
+            v-for="item in LSTMOptions"
             :key="item.value"
             :label="item.label"
             :value="item.value">
         </el-option>
       </el-select>
-      <el-input v-if="model===modelSelectEnum.GPT" v-model="poemLength" placeholder="请输入诗词的长度"/>
-      <el-input v-if="model===modelSelectEnum.GPT" v-model="poemNum" placeholder="请输入诗词的数量"/>
-      <el-input v-if="value===selectEnum.querySameSentence" v-model="precision" placeholder="请输入查找的精度"/>
+      <el-select v-if="model===modelSelectEnum.GPT" v-model="value" placeholder="GPT中模式的选择">
+        <el-option
+            v-for="item in GPTOptions"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+        </el-option>
+      </el-select>
+      <el-input v-if="model===modelSelectEnum.GPT&&value===selectEnum.generatePoem" v-model="poemLength"
+                placeholder="请输入诗词的长度"/>
+      <el-input v-if="model===modelSelectEnum.GPT&&value===selectEnum.generatePoem" v-model="poemNum"
+                placeholder="请输入诗词的数量"/>
+<!--      <el-input v-if="model===modelSelectEnum.LSTM&&value===selectEnum.querySameSentence" v-model="precision"-->
+<!--                placeholder="请输入查找的精度"/>-->
       <el-button type="primary" v-on:click="handleClick">生成</el-button>
 
       <div id="sentenceBox">
@@ -59,20 +70,31 @@ export default {
       selectEnum: {
         generatePoem: "generatePoem",
         generateAcrostic: "generateAcrostic",
-        querySameSentence: "querySameSentence"
+        // querySameSentence: "querySameSentence"
       },
       inputSentence: "",
-      options: [{
+      LSTMOptions: [{
         value: 'generatePoem',
         label: '续写诗词'
       }, {
         value: 'generateAcrostic',
         label: '生成藏头诗'
+      },
+      //   {
+      //   value: 'querySameSentence',
+      //   label: '查找相近诗句'
+      // },
+      ],
+      GPTOptions: [{
+        value: 'generatePoem',
+        label: '续写诗词'
       }, {
-        value: 'querySameSentence',
-        label: '查找相近诗句'
-      },],
+        value: 'generateAcrostic',
+        label: '生成藏头诗'
+      }],
+      // 选择的模式
       value: "generatePoem",
+      // 所选择的模型
       model: "GPT",
       poemNum: undefined,
       poemLength: undefined,
@@ -171,7 +193,7 @@ export default {
       let data = {
         "text": sentence,
         "precision": precision,
-        "number":10
+        "number": 10
       }
       return queryRelatedSentence(data).then((res) => {
         this.sentences = res.data.data
@@ -186,31 +208,40 @@ export default {
 
 <style scoped>
 #proot {
+  margin-top: 10px;
   display: flex;
-  justify-content: center;
+  /*justify-content: center;*/
   /*flex-shrink: 0;*/
+
+  flex-direction: column;
   align-items: center;
   /*overflow-y: scroll;*/
+  height: 100%;
+  /*top:1%;*/
 }
 
 #box {
+  /*margin-top: 10px;*/
   display: block;
-  position: absolute;
   /*overflow: scroll;*/
   /*flex-shrink: 0;*/
   top: 10%;
 }
 
-/*#sentenceBox{*/
-/*  display: block;*/
-/*  position: absolute;*/
+#sentenceBox {
+  overflow: auto;
+  justify-content: center;
+  text-align: center;
+  /*  display: block;*/
+  /*  position: absolute;*/
 
-/*  top:15%*/
-/*}*/
-/*#box .el-button {*/
-/*  position: absolute;*/
-/*  left: 100%;*/
-/*}*/
+  /*  top:15%*/
+  /*}*/
+  /*#box .el-button {*/
+  /*  position: absolute;*/
+  /*  left: 100%;*/
+}
+
 .el-input {
   width: 200px;
 }

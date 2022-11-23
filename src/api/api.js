@@ -43,6 +43,6 @@ export const queryRelatedSentence = (data) => {
         method: "post",
         url: `${tag}/nearestSentence`,
         data: data,
-        timeout: 1000
+        timeout: 50000
     });
 }
