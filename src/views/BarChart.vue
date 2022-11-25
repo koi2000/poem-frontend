@@ -1,6 +1,6 @@
 <template>
   <div class="Echarts">
-    <div id="main" style="width: 600px;height:400px;"/>
+    <div ref="wordcloud" class="wordcloud">
   </div>
 </template>
 

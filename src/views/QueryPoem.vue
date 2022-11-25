@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import '../assets/style/font.less';
+import '../assets/style/xing.less';
 import {generatePoem} from "@/api/api"
 import {generateAcrostic} from "@/api/api"
 import {queryRelatedSentence, generatePoemByGPT} from "@/api/api"

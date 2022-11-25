@@ -22,31 +22,30 @@
           <!--          </el-button>-->
 
           <el-button type="primary" v-on:click="() => {
-      // this.option= optionEnum.AnalysisViews
-      this.$router.push({path: '/DashBoard'})
-    }">DashBoard
+            this.$router.push({path: '/DashBoard'})}">DashBoard
           </el-button>
 
           <el-button type="primary" v-on:click="() => {
-      this.option = optionEnum.GeneratePoem
-    }">诗词生成
+            this.$router.push({path: '/StoryPage'})}">StoryPage
           </el-button>
 
           <el-button type="primary" v-on:click="() => {
-      this.option = optionEnum.QueryPoem
-    }">查找相似诗词
+            this.option = optionEnum.GeneratePoem}">诗词生成
           </el-button>
 
           <el-button type="primary" v-on:click="() => {
-      this.option = optionEnum.WordConnect
-    }">查看关联词
+            this.option = optionEnum.QueryPoem}">查找相似诗词
+          </el-button>
+
+          <el-button type="primary" v-on:click="() => {
+            this.option = optionEnum.WordConnect}">查看关联词
           </el-button>
         </div>
       </div>
     </div>
 
-    <TableauTest/>
-<!--    <TableauTest/>-->
+    <WordCloud/>
+    <!--    <TableauTest/>-->
     <DashBoard v-if="option===optionEnum.DashBoard"/>
     <GeneratePoem v-if="option===optionEnum.GeneratePoem"/>
     <QueryPoem v-if="option===optionEnum.QueryPoem"/>
@@ -55,17 +54,19 @@
 </template>
 
 <script>
-import '../assets/style/font.less';
+import '../assets/style/xing.less';
+import '../assets/style/shuju.less';
 import GeneratePoem from "@/views/GeneratePoem";
 import QueryPoem from "@/views/QueryPoem";
 import WordConnect from "@/views/WordConnect";
 import TableauTest from "@/views/TableauTest";
-
+import WorldCloud from "@/views/subviews/WordCloud";
+import WordCloud from "@/views/subviews/WordCloud";
 
 
 export default {
   name: "MainPage",
-  components: {TableauTest, WordConnect, QueryPoem, GeneratePoem},
+  components: {WordCloud, WorldCloud, TableauTest, WordConnect, QueryPoem, GeneratePoem},
   data() {
     return {
       option: "",
@@ -73,7 +74,7 @@ export default {
         GeneratePoem: "generatePoem",
         WordConnect: "wordconnect",
         QueryPoem: "querypoem",
-        DashBoard:"DashBoard"
+        DashBoard: "DashBoard"
         // querySameSentence: "querySameSentence"
       }
     }

@@ -25,6 +25,11 @@ const routes = [
         path: "DashBoard",
         name: "DashBoard",
         component:()=> import("../components/dashboard/dashboard.vue")
+    },
+    {
+        path: "StoryPage",
+        name: "StoryPage",
+        component:()=> import("../views/StoryPage.vue")
     }
 ]
 export default routes
