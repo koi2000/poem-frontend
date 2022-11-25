@@ -19,7 +19,7 @@ module.exports = {
   //   assetsSubDirectory: 'static',
   //   assetsPublicPath: './',    // 之前是 '/'
   // },
-  publicPath: "/poem-frontend/",
+  // publicPath: "/poem-frontend/",
   configureWebpack: {
     devtool: 'source-map',
   }

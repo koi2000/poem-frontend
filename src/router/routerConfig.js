@@ -20,6 +20,11 @@ const routes = [
         path: "QueryPoem",
         name: "QueryPoem",
         component:()=> import("../views/QueryPoem.vue")
+    },
+    {
+        path: "DashBoard",
+        name: "DashBoard",
+        component:()=> import("../components/dashboard/dashboard.vue")
     }
 ]
 export default routes

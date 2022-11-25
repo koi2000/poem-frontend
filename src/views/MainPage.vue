@@ -22,31 +22,32 @@
           <!--          </el-button>-->
 
           <el-button type="primary" v-on:click="() => {
-      this.option= optionEnum.AnalysisViews
-    }">可视化展示
+      // this.option= optionEnum.AnalysisViews
+      this.$router.push({path: '/DashBoard'})
+    }">DashBoard
           </el-button>
 
           <el-button type="primary" v-on:click="() => {
-      this.option= optionEnum.GeneratePoem
+      this.option = optionEnum.GeneratePoem
     }">诗词生成
           </el-button>
 
           <el-button type="primary" v-on:click="() => {
-      this.option= optionEnum.QueryPoem
+      this.option = optionEnum.QueryPoem
     }">查找相似诗词
           </el-button>
 
           <el-button type="primary" v-on:click="() => {
-      this.option=optionEnum.WordConnect
+      this.option = optionEnum.WordConnect
     }">查看关联词
           </el-button>
         </div>
       </div>
-
-
     </div>
 
-    <AnalysisViews v-if="option===optionEnum.AnalysisViews"/>
+    <TableauTest/>
+<!--    <TableauTest/>-->
+    <DashBoard v-if="option===optionEnum.DashBoard"/>
     <GeneratePoem v-if="option===optionEnum.GeneratePoem"/>
     <QueryPoem v-if="option===optionEnum.QueryPoem"/>
     <WordConnect v-if="option===optionEnum.WordConnect"/>
@@ -58,11 +59,13 @@ import '../assets/style/font.less';
 import GeneratePoem from "@/views/GeneratePoem";
 import QueryPoem from "@/views/QueryPoem";
 import WordConnect from "@/views/WordConnect";
-import AnalysisViews from "@/views/AnalysisViews";
+import TableauTest from "@/views/TableauTest";
+
+
 
 export default {
   name: "MainPage",
-  components: {AnalysisViews, WordConnect, QueryPoem, GeneratePoem},
+  components: {TableauTest, WordConnect, QueryPoem, GeneratePoem},
   data() {
     return {
       option: "",
@@ -70,7 +73,7 @@ export default {
         GeneratePoem: "generatePoem",
         WordConnect: "wordconnect",
         QueryPoem: "querypoem",
-        AnalysisViews:"AnalysisViews"
+        DashBoard:"DashBoard"
         // querySameSentence: "querySameSentence"
       }
     }
