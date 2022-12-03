@@ -1,5 +1,7 @@
 <template>
   <div id="proot" v-loading="loading">
+    <div id="title"><b>请选择想要使用的模型</b> &nbsp</div>
+
     <div id="text"><b>请选择想要使用的模型</b> &nbsp</div>
     <el-select v-model="model" placeholder="请选择使用的模型">
       <el-option
@@ -88,10 +90,12 @@ export default {
       GPTOptions: [{
         value: 'generatePoem',
         label: '续写诗词'
-      }, {
-        value: 'generateAcrostic',
-        label: '生成藏头诗'
-      }],
+      },
+      //   {
+      //   value: 'generateAcrostic',
+      //   label: '生成藏头诗'
+      // }
+      ],
       // 选择的模式
       value: "generatePoem",
       // 所选择的模型

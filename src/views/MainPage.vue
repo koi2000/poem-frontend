@@ -21,52 +21,62 @@
           <!--    }">查看关联词-->
           <!--          </el-button>-->
 
-          <el-button type="primary" v-on:click="() => {
-            this.$router.push({path: '/DashBoard'})}">DashBoard
-          </el-button>
+<!--          <el-button type="primary" v-on:click="() => {-->
+<!--            this.$router.push({path: '/DashBoard'})}">DashBoard-->
+<!--          </el-button>-->
 
-          <el-button type="primary" v-on:click="() => {
-            this.$router.push({path: '/StoryPage'})}">StoryPage
-          </el-button>
+<!--          <el-button type="primary" v-on:click="() => {-->
+<!--            this.$router.push({path: '/temp'})}">temp-->
+<!--          </el-button>-->
 
-          <el-button type="primary" v-on:click="() => {
-            this.option = optionEnum.GeneratePoem}">诗词生成
-          </el-button>
+<!--          <el-button type="primary" v-on:click="() => {-->
+<!--            this.$router.push({path: '/StoryPage'})}">StoryPage-->
+<!--          </el-button>-->
 
-          <el-button type="primary" v-on:click="() => {
-            this.option = optionEnum.QueryPoem}">查找相似诗词
-          </el-button>
+<!--          <el-button type="primary" v-on:click="() => {-->
+<!--            this.option = optionEnum.GeneratePoem}">诗词生成-->
+<!--          </el-button>-->
 
-          <el-button type="primary" v-on:click="() => {
-            this.option = optionEnum.WordConnect}">查看关联词
-          </el-button>
+<!--          <el-button type="primary" v-on:click="() => {-->
+<!--            this.option = optionEnum.QueryPoem}">查找相似诗词-->
+<!--          </el-button>-->
+
+<!--          <el-button type="primary" v-on:click="() => {-->
+<!--            this.option = optionEnum.WordConnect}">查看关联词-->
+<!--          </el-button>-->
         </div>
       </div>
     </div>
+    <!--    <WordCloud/>-->
 
-    <WordCloud/>
     <!--    <TableauTest/>-->
-    <DashBoard v-if="option===optionEnum.DashBoard"/>
-    <GeneratePoem v-if="option===optionEnum.GeneratePoem"/>
-    <QueryPoem v-if="option===optionEnum.QueryPoem"/>
-    <WordConnect v-if="option===optionEnum.WordConnect"/>
+    <!--    <DashBoard v-if="option===optionEnum.DashBoard"/>-->
+    <!--    <GeneratePoem v-if="option===optionEnum.GeneratePoem"/>-->
+    <ChinaMap/>
+    <GeneratePoem/>
+    <QueryPoem/>
+    <WordConnect/>
+    <!--    <QueryPoem v-if="option===optionEnum.QueryPoem"/>-->
+    <!--    <WordConnect v-if="option===optionEnum.WordConnect"/>-->
   </div>
 </template>
 
 <script>
 import '../assets/style/xing.less';
-import '../assets/style/shuju.less';
+// import '../assets/style/shuju.less';
 import GeneratePoem from "@/views/GeneratePoem";
 import QueryPoem from "@/views/QueryPoem";
 import WordConnect from "@/views/WordConnect";
 import TableauTest from "@/views/TableauTest";
 import WorldCloud from "@/views/subviews/WordCloud";
 import WordCloud from "@/views/subviews/WordCloud";
-
+import ChinaMap from "@/views/subviews/ChinaMap";
+import point from '@/components/point/point'
+import BarChart from "@/views/BarChart";
 
 export default {
   name: "MainPage",
-  components: {WordCloud, WorldCloud, TableauTest, WordConnect, QueryPoem, GeneratePoem},
+  components: {BarChart, ChinaMap, WordCloud, WorldCloud, TableauTest, WordConnect, QueryPoem, GeneratePoem,point},
   data() {
     return {
       option: "",
@@ -91,8 +101,10 @@ export default {
   /*flex-shrink: 0;*/
   flex-direction: column;
   align-items: center;
-  overflow-y: scroll;
-  height: 100%;
+  /*overflow-y: scroll;*/
+  top: 0;
+  /*height: 100%;*/
+  /*width: 100%;*/
   /*top:1%;*/
 }
 

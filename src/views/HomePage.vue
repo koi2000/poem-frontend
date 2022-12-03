@@ -1,0 +1,342 @@
+<template>
+
+  <body>
+  <div class="main">
+<!--    <div class="header">-->
+<!--      <div class="rightcolumn">-->
+<!--        <div class="doc-title">-->
+<!--          <h1>文案没想好</h1>-->
+<!--        </div>-->
+
+<!--      </div>-->
+<!--      <div class="leftcolumn">-->
+<!--        <div class="introduction">-->
+<!--          <p>-->
+<!--            《从百草园到三味书屋》是鲁迅于1926年写的一篇童年妙趣生活的回忆性散文，此文被收入《朝花夕拾》。全文描述了色调不同，情韵各异的两大景片：百草园和三味书屋。作者写百草园，以“乐”为中心，以简约生动的文字，描绘了一个奇趣无穷的儿童乐园，其间穿插“美女蛇”的传说和冬天雪地捕鸟的故事，动静结合，详略得当，趣味无穷。三味书屋则是一个完全不同的世界，作者逼真地写出了三味书屋的陈腐味，说它是“全城中称为最严厉的书塾”，儿童在那里受到规矩的束缚。但作者并未将三味书屋写得死气沉沉，而是通过课间学生溜到后园嬉耍，老私塾先生在课堂上入神读书学生乘机偷乐两个小故事的叙述，使三味书屋充满了谐趣，表现了儿童不可压抑的快乐天性。该散文入选2018年版初中语文，人民教育出版社七年级（上册）。</p>-->
+<!--        </div>-->
+
+<!--      </div>-->
+<!--    </div>-->
+    <MainPage/>
+
+<!--    <div class="footer">-->
+<!--      <div id="chart3" class="chart"></div>-->
+<!--    </div>-->
+  </div>
+
+  </body>
+
+</template>
+
+<script>
+import MainPage from "@/views/MainPage";
+
+let echarts = require('echarts/lib/echarts');
+// require('echarts/lib/chart/bar'); //所需图表
+// import {vintage} from "/static/js/theme/final-project-theme-echart.js";
+import vintage from '/src/assets/theme/theme'
+
+
+export default {
+  name: "HomePage",
+  components: {MainPage},
+  methods: {
+    init() {
+      echarts.registerTheme('vintage', vintage) // 注册主题
+      var myChart = echarts.init(document.getElementById('chart3'), 'vintage');
+
+      // 指定图表的配置项和数据
+      // var chartDom = document.getElementById('main');
+      // var myChart = echarts.init(chartDom);
+      var option;
+
+      option = {
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'line',
+            lineStyle: {}
+          }
+        },
+        // legend: {
+        //   data: ['’]
+        // },
+        singleAxis: {
+          top: 50,
+          bottom: 50,
+          axisTick: {},
+          axisLabel: {},
+          type: 'time',
+          axisPointer: {
+            animation: false,
+            label: {
+              show: false
+            }
+          },
+          splitLine: {
+            show: false,
+            lineStyle: {
+              type: 'dashed',
+              opacity: 0.2
+            }
+          }
+        },
+        series: [
+          {
+            type: 'themeRiver',
+            itemStyle: {
+              color: {
+                type: 'linear',
+                x: 0,
+                y: 0,
+                x2: 0,
+                y2: 1,
+                colorStops: [
+                  {
+                    offset: 0,
+                    color: '#B9B1A7' // 0% 处的颜色
+                  },
+                  {
+                    offset: 0.25,
+                    color: '#B9B1A7' // 0% 处的颜色
+                  },
+                  {
+                    offset: 0.5,
+                    color: 'rgba(128, 128, 128,0)' // 0% 处的颜色
+                  },
+                  {
+                    offset: 0.75,
+                    color: '#B9B1A7' // 0% 处的颜色
+                  },
+                  {
+                    offset: 1,
+                    color: '#B9B1A7' // 100% 处的颜色
+                  }
+                ],
+                global: false // 缺省为 false
+              }
+            },
+            emphasis: {
+              itemStyle: {
+                shadowBlur: 20,
+                shadowColor: 'rgba(0, 0, 0, 0.4)'
+              }
+            },
+            data: [
+              ['0300/01/01', 8020, ''],
+              ['0500/01/01', 12586, ''],
+              ['0600/01/01', 6170, ''],
+              ['0800/01/01', 50195, ''],
+              ['1000/01/01', 120195, ''],
+              ['1127/01/01', 287114, ''],
+              ['1250/01/01', 29058, ''],
+              ['1300/01/01', 47375, ''],
+              ['1400/01/01', 25736, ''],
+              ['1450/01/01', 166957, ''],
+              ['1500/01/01', 236957, ''],
+              ['1650/01/01', 27700, ''],
+              ['1750/01/01', 90089, ''],
+              ['1900/01/01', 20367, ''],
+              ['1920/01/01', 28419, ''],
+              ['1970/01/01', 28219, ''],
+
+              // ['1150/01/01', 19058, ''],
+
+
+              // ['-0500/01/01', 570, ''],
+              // ['-0100/01/01', 363, '']
+            ]
+          }
+        ]
+      };
+      // option && myChart.setOption(option);
+      myChart.setOption(option);
+      window.onresize = function () {
+        myChart.resize();
+      };
+    }
+  },
+  mounted() {
+    this.init();
+  }
+}
+</script>
+
+
+<style>
+@font-face {
+  font-family: 'kxfont';
+  src: url('../assets/fonts/康熙字典体完整版本.TTF');
+}
+
+* {
+  font-family: 'kxfont';
+}
+
+body {
+  background-color: #F6F6F4;
+  background-image: url("https://www.transparenttextures.com/patterns/rice-paper-2.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  flex-direction: column;
+  z-index: -999;
+  top: 0;
+}
+
+.header {
+  flex: 1;
+  display: flex;
+  /*flex-direction: row;*/
+  /* border: 1em;
+  border-style:solid; */
+  justify-content: center;
+  align-items: center;
+  /* margin: auto; */
+}
+
+.footer {
+  flex: 1;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  /*z-index: -99;*/
+  /*flex-direction: row;*/
+  /* border: 1em;
+  border-style:solid; */
+  /* margin: auto; */
+}
+
+/* Left column */
+.leftcolumn {
+  flex: 1;
+
+  /* margin: auto; */
+}
+
+/* Right column */
+.rightcolumn {
+  flex: 1;
+
+  /* margin: auto; */
+}
+
+h1 {
+  font-size: 60px;
+  text-align: center;
+}
+
+p {
+  font-size: 18px;
+}
+
+.introduction {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  margin-right: 20%;
+  margin-left: 10%;
+}
+
+.doc-title {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  margin-right: 10%;
+  margin-left: 30%;
+}
+
+.chart {
+  width: 100%;
+  height: 400px;
+}
+</style>
+
+<!--<style scoped>-->
+
+<!--@font-face {-->
+<!--  font-family: 'kxfont';-->
+<!--  src: url('../assets/fonts/康熙字典体完整版本.TTF');-->
+<!--}-->
+
+<!--* {-->
+<!--  font-family: 'kxfont';-->
+<!--}-->
+
+<!--body {-->
+<!--  background-color: #F6F6F4;-->
+<!--  background-image: url("https://www.transparenttextures.com/patterns/rice-paper-2.png");-->
+<!--  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */-->
+<!--}-->
+
+<!--.main {-->
+<!--  display: flex;-->
+<!--  flex-direction: column;-->
+<!--}-->
+
+<!--.header {-->
+<!--  flex: 1;-->
+<!--  display: flex;-->
+<!--  flex-direction: row;-->
+<!--  /* border: 1em;-->
+<!--border-style:solid; */-->
+<!--  justify-content: center;-->
+<!--  align-items: center;-->
+<!--  /* margin: auto; */-->
+<!--}-->
+
+<!--.footer {-->
+<!--  flex: 1;-->
+<!--  display: flex;-->
+<!--  flex-direction: row;-->
+<!--  /* border: 1em;-->
+<!--  border-style:solid; */-->
+<!--  /* margin: auto; */-->
+<!--}-->
+
+<!--/* Left column */-->
+<!--.leftcolumn {-->
+<!--  flex: 1;-->
+
+<!--  /* margin: auto; */-->
+<!--}-->
+
+<!--/* Right column */-->
+<!--.rightcolumn {-->
+<!--  flex: 1;-->
+
+<!--  /* margin: auto; */-->
+<!--}-->
+
+<!--h1 {-->
+<!--  font-size: 60px;-->
+<!--  text-align: center;-->
+<!--}-->
+
+<!--p {-->
+<!--  font-size: 18px;-->
+<!--}-->
+
+<!--.introduction {-->
+<!--  margin-top: 10%;-->
+<!--  margin-bottom: 5%;-->
+<!--  margin-right: 20%;-->
+<!--  margin-left: 10%;-->
+<!--}-->
+
+<!--.doc-title {-->
+<!--  margin-top: 10%;-->
+<!--  margin-bottom: 5%;-->
+<!--  margin-right: 10%;-->
+<!--  margin-left: 30%;-->
+<!--}-->
+
+<!--.chart {-->
+<!--  width: 100%;-->
+<!--  height: 400px;-->
+<!--}-->
+
+<!--</style>-->

@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="title">
-    <h1>{{name}}</h1>
+    <h1 >{{name}}</h1>
     <div class="legend-wrapper">
       <ul>
         <li v-for="(legend,index) in legendArr" v-on:mouseout="donwplay(index)" v-on:mouseover="highlight(index)" :style="styleArr[index]" @click="legendToggle(legend)">
@@ -81,14 +81,14 @@ export default {
   display flex
   height 50px
   line-height 50px
-  background-color rgba(32, 32, 35, 0.2)
-  color white
+  //background-color rgba(32, 32, 35, 0.2)
   width 100%
   h1
     flex 0 0 120px
     font-size 21px
     font-weight bold
     padding-left 20px
+    //color black
   ul
     position absolute
     right 0

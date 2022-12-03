@@ -1,6 +1,8 @@
 <template>
   <div id="wroot" v-loading="loading">
     <div id="box">
+
+      <p><strong>查看关联词</strong></p>
       <el-input v-model="inputWord"></el-input>
       <el-button type="primary" v-on:click="handleClick">查找相近词</el-button>
     </div>

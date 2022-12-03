@@ -4,7 +4,7 @@ const routes = [
     {
         path: "",
         name: "MainPage",
-        component: () => import("../views/MainPage.vue"),
+        component: () => import("../views/HomePage.vue"),
     },
     {
         path: "WordConnect",
@@ -30,6 +30,11 @@ const routes = [
         path: "StoryPage",
         name: "StoryPage",
         component:()=> import("../views/StoryPage.vue")
+    },
+    {
+        path: "temp",
+        name: "temp",
+        component:()=> import("../views/BarChart.vue")
     }
 ]
 export default routes
