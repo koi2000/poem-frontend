@@ -1,6 +1,6 @@
 <template>
   <div id="proot" v-loading="loading">
-    <div id="title"><b>请选择想要使用的模型</b> &nbsp</div>
+    <div id="title"><b>诗词生成</b> &nbsp</div>
 
     <div id="text"><b>请选择想要使用的模型</b> &nbsp</div>
     <el-select v-model="model" placeholder="请选择使用的模型">
@@ -12,7 +12,7 @@
       </el-option>
     </el-select>
     <div id="box">
-      <el-input v-model="inputSentence"/>
+      <el-input v-model="inputSentence" placeholder="请输入诗句"/>
       <el-select v-if="model===modelSelectEnum.LSTM" v-model="value" placeholder="LSTM中模式的选择">
         <el-option
             v-for="item in LSTMOptions"

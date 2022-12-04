@@ -2,6 +2,7 @@
 
   <div id="qroot" v-loading="loading">
 
+    <div id="text"><b>查找相近的诗词</b> &nbsp</div>
     <div id="box">
       <el-input v-model="inputSentence" placeholder="请输入诗句"/>
       <el-input v-model="precision"
@@ -71,9 +72,12 @@ export default {
       }
       return queryRelatedSentence(data).then((res) => {
         this.sentences = res.data.data
-        // this.sentences.map((item) => {
-        //   return item[0]
-        // })
+        // this.sentences.map()
+        this.sentences = this.sentences.map((item) => {
+          // item = item.replace("[","")
+          // item = item.replace("]","")
+          return "诗句："+item[0]+" 距离："+item[1]//toString(item[1])
+        })
       })
     }
   }
