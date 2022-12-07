@@ -1,4 +1,4 @@
-const theme = {
+const vintage = {
     "version": 1,
     "themeName": "vintage",
     "theme": {
@@ -567,4 +567,4 @@ const theme2 = {
     }
 }
 
-export default theme2
+export default vintage

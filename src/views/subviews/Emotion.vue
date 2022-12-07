@@ -1,23 +1,25 @@
 <template>
   <div style="position: static">
-<!--    <div class="header">-->
-<!--      <div class="doc-title">-->
-<!--        <h2>唐诗宋词中颜色，季节与情绪词的相似度桑基图</h2>-->
-<!--        <h1>&nbsp;&nbsp;根据余弦相似度，对结果进行了差异放大后，将唐诗宋词中颜色，季节与情绪词的相似度绘制如下。将鼠标悬浮于某节点处，可以高亮与其相关的词项的图形。将鼠标悬浮于某一连线上，停止半秒即可高亮该连线和两节点并显示相似度值。</h1>-->
-<!--      </div>-->
-<!--    </div>-->
+    <!--    <div class="header">-->
+    <!--      <div class="doc-title">-->
+    <!--        <h2>唐诗宋词中颜色，季节与情绪词的相似度桑基图</h2>-->
+    <!--        <h1>&nbsp;&nbsp;根据余弦相似度，对结果进行了差异放大后，将唐诗宋词中颜色，季节与情绪词的相似度绘制如下。将鼠标悬浮于某节点处，可以高亮与其相关的词项的图形。将鼠标悬浮于某一连线上，停止半秒即可高亮该连线和两节点并显示相似度值。</h1>-->
+    <!--      </div>-->
+    <!--    </div>-->
     <div id="title"><b>唐诗宋词中颜色，季节与情绪词的相似度桑基图</b> &nbsp</div>
     <p></p>
     <div id="text">
       <b>
         <p>根据余弦相似度，对结果进行了差异放大后，将唐诗宋词中颜色，季节与情绪词的相似度绘制如下。</p>
-        <p>将鼠标悬浮于某节点处，可以高亮与其相关的词项的图形。<p>
+        <p>将鼠标悬浮于某节点处，可以高亮与其相关的词项的图形。
+        <p>
         <p>将鼠标悬浮于某一连线上，停止半秒即可高亮该连线和两节点并显示相似度值。</p>
       </b>
 
     </div>
-
     <div id="d3Chart"></div>
+
+
   </div>
 </template>
 
@@ -25,18 +27,26 @@
 
 
 // import * as d3 from "../../assets/js/d3.v7.min.js";
-// import {sankey as Sankey} from "../../assets/js/d3-sankey.min.js"
+import * as d3Sankey from "../../assets/js/d3-sankey.min.js";
+
+
 // import {sankey as Sankey} from "d3-sankey";
-// var sankey = Sankey();
-// import * as d3 from 'd3';
+import * as d3 from "d3";
+// import {sankey} from "d3-sankey";
+
+// import * as d3 from 'd3'
+// import * as d3Sankey from 'd3-sankey'
 
 export default {
   name: "Emotion",
-
+  // data() {
+  //   this.sankey = undefined
+  // },
   mounted() {
     // d3.select("#d3Chart").remove();
     this.draw()
-  },
+  }
+  ,
   methods: {
     draw() {
       const data = {
@@ -103,6 +113,8 @@ export default {
       const width = 700
       const height = 700
       const margin = 30
+      // d3.select("#d3Chart").removeAll();
+      // d3.select("#d3Chart").selectAll("svg").remove();
       const svg = d3
           .select('#d3Chart')
           .append('svg')
@@ -115,8 +127,7 @@ export default {
           .attr('transform', `translate(${margin}, ${margin})`)
 
       const colorScale = d3.scaleOrdinal(d3.schemeSet3)
-
-      const sankey = d3
+      const sankey = d3Sankey
           .sankey()
           .nodeWidth(30)
           .nodePadding(20)
@@ -151,7 +162,7 @@ export default {
           .data(links)
           .join('path')
           .attr('indexName', (d) => d.source.name + '-' + d.target.name)
-          .attr('d', d3.sankeyLinkHorizontal())
+          .attr('d', d3Sankey.sankeyLinkHorizontal())
           .attr('stroke', (d, i) => colorScale(d.source.name))
           .attr('stroke-width', (d) => d.width)
           .attr('stroke-opacity', '0.5')

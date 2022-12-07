@@ -50,6 +50,7 @@
     <!--    <WordCloud/>-->
 
     <ChinaMap/>
+<!--    <HomePage/>-->
     <Emotion/>
     <!--    <TableauTest/>-->
     <!--    <DashBoard v-if="option===optionEnum.DashBoard"/>-->
@@ -77,7 +78,7 @@
     <GeneratePoem v-if="this.option===optionEnum.GeneratePoem"/>
     <QueryPoem v-if="this.option===optionEnum.QueryPoem"/>
     <WordConnect v-if="this.option===optionEnum.WordConnect"/>
-
+<!--    <EmotionPlace/>-->
 
   </div>
 </template>

@@ -84,7 +84,6 @@ export default {
     },
     getMyChart() {
       // this.init(options)
-      axios.get()
       axios.get('static/data/place/placeNumbers.json').then((res) => {
         this.placeData = res.data
         axios.get("static/data/place/provinceAuthor.json").then((res)=>{
