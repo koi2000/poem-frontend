@@ -21,10 +21,11 @@
         </div>
       </div>
 
-      <div class="footer">
-        <div id="chart3" class="chart1"></div>
-        <div id="chart4" class="chart2"></div>
-      </div>
+
+    </div>
+    <div class="footer">
+      <div id="chart3" class="chart1"></div>
+      <div id="chart4" class="chart2"></div>
     </div>
 
   </div>
@@ -37,11 +38,14 @@ import vintage from '/src/assets/theme/theme'
 import EmotionPlace from "@/views/subviews/EmotionPlace";
 import "../assets/css/theme.css"
 import * as echarts from "../assets/js/echarts.min.js"
+import Test from "@/views/subviews/test";
+import WordCloud from "@/views/subviews/WordCloud";
+import D3Cloud from "@/views/D3Cloud";
 
 
 export default {
   name: "HomePage",
-  components: {EmotionPlace, MainPage},
+  components: {D3Cloud, WordCloud, Test, EmotionPlace, MainPage},
   methods: {
     init1() {
       var myChart = echarts.init(document.getElementById('chart3'), 'vintage');

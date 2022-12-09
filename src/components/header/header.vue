@@ -1,6 +1,6 @@
 <template lang="html">
-  <div class="title">
-    <h1 >{{name}}</h1>
+  <div class="headerTitle">
+<!--    <h1 >{{name}}</h1>-->
     <div class="legend-wrapper">
       <ul>
         <li v-for="(legend,index) in legendArr" v-on:mouseout="donwplay(index)" v-on:mouseover="highlight(index)" :style="styleArr[index]" @click="legendToggle(legend)">
@@ -76,7 +76,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.title
+.headerTitle
   position relative
   display flex
   height 50px
@@ -84,6 +84,8 @@ export default {
   //background-color rgba(32, 32, 35, 0.2)
   width 100%
   h1
+    //position absolute
+    //right 0
     flex 0 0 120px
     font-size 21px
     font-weight bold
@@ -91,7 +93,7 @@ export default {
     //color black
   ul
     position absolute
-    right 0
+    right 20%
     padding-right 20px
     margin-top -2px
     li

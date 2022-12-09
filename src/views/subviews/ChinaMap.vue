@@ -1,19 +1,36 @@
-<!--<style lang="stylus" scoped>-->
-<!--.chinaMap-->
-<!--  //background url('../../assets/bg.jpg') no-repeat-->
-<!--  background-size 100% 100%-->
-<!--  .main-->
-<!--    height calc(100% - 120px)-->
-<!--    width 100%-->
-<!--    transition all 0.5s linear-->
-<!--</style>-->
-
 <template>
-  <div>
-    <v-header :name="name" :legendArr="legendArr" :myChart="myChart"></v-header>
-    <!--    <v-filter :myChart="myChart" v-if="myChart._dom"></v-filter>-->
-    <div id="chinaMap" style="width: 630px;height:400px;"></div>
+
+  <body>
+  <div class="main">
+    <div class="header">
+      <div class="leftcolumn">
+        <div class="doc-title">
+          <h1>地理数据</h1>
+        </div>
+
+      </div>
+      <div class="rightcolumn">
+        <div class="introduction">
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis inventore maxime, quisquam
+            iure perspiciatis iste amet voluptates eveniet optio pariatur velit, numquam iusto beatae
+            consequatur quae ab nam quod sunt vel labore non dolore fuga accusamus tempora! Laudantium,
+            culpa distinctio quis quos sunt tempora maiores explicabo in numquam dolorem ducimus, magni
+            incidunt cupiditate possimus officiis id. Ab, aut, consequatur laudantium accusamus tempora
+            nostrum laboriosam, sequi aliquid pariatur enim atque cumque provident error vel id odit eos
+            impedit ipsam porro sapiente iusto vero est praesentium. Eius omnis labore voluptate earum
+            adipisci quas officia iure culpa, ipsam eveniet, aut, veniam ratione odit!</p>
+        </div>
+      </div>
+
+    </div>
+    <div>
+      <v-header :name="name" :legendArr="legendArr" :myChart="myChart"></v-header>
+      <!--    <v-filter :myChart="myChart" v-if="myChart._dom"></v-filter>-->
+      <div id="chinaMap"></div>
+    </div>
+
   </div>
+  </body>
 </template>
 
 <script>
@@ -35,8 +52,8 @@ export default {
       myChart: {},
       geoCoordMap: {},
       name: '地理数据',
-      authorData:{},
-      placeData:{}
+      authorData: {},
+      placeData: {}
     }
   },
   components: {
@@ -86,7 +103,7 @@ export default {
       // this.init(options)
       axios.get('static/data/place/placeNumbers.json').then((res) => {
         this.placeData = res.data
-        axios.get("static/data/place/provinceAuthor.json").then((res)=>{
+        axios.get("static/data/place/provinceAuthor.json").then((res) => {
           this.authorData = res.data
           let options = {
             // backgroundColor: '#404a59',
@@ -196,5 +213,18 @@ export default {
 </script>
 
 <style scoped>
+#chinaMap {
+  width: 630px;
+  height: 400px;
+  justify-content: center;
+  align-items: center;
+
+  /*position: absolute;*/
+  left: 500px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 
 </style>
