@@ -51,7 +51,7 @@ import * as echarts from "../../assets/js/echarts.min.js"
 import "echarts-wordcloud/dist/echarts-wordcloud";
 import "echarts-wordcloud/dist/echarts-wordcloud.min";
 import WordCloud from "@/views/subviews/WordCloud";
-
+import "../../assets/css/theme.css"
 export default {
   name: "EmotionPlace",
   components: {WordCloud},
@@ -1254,17 +1254,19 @@ export default {
         "animationEasingUpdate": "cubicOut",
         "animationDelayUpdate": 0,
         "color": [
-          "#67001f",
-          "#b2182b",
-          "#d6604d",
-          "#f4a582",
-          "#fddbc7",
-          "#d1e5f0",
-          "#92c5de",
-          "#4393c3",
-          "#2166ac",
-          "#053061"
+          "#b39695",
+          "#cfb9a7",
+          "#b8b0a9",
+          "#b5bfb6",
+          "#9eb6c3",
+          "#9ea6b4",
+          "#ab9293",
+          "#ada585"
         ],
+
+          textStyle: {
+            fontFamily: 'kxfont'
+          },
         "series": [
           {
             "type": "sankey",
@@ -1560,6 +1562,10 @@ export default {
         "animationDurationUpdate": 300,
         "animationEasingUpdate": "cubicOut",
         "animationDelayUpdate": 0,
+
+          textStyle: {
+            fontFamily: 'kxfont'
+          },
         "color": [
           "#c23531",
           "#2f4554",
