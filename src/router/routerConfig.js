@@ -9,7 +9,7 @@ const routes = [
     {
         path: "test",
         name: "test",
-        component: () => import("../views/test.vue"),
+        component: () => import("../views/Test.vue"),
     },
     {
         path: "index2",
@@ -36,11 +36,11 @@ const routes = [
         name: "SentAnalysisPie",
         component: () => import("../views/subviews/SentAnalysisPie.vue"),
     },
-    {
-        path: "Homepage2",
-        name: "Homepage2",
-        component: () => import("../views/HomePage2.vue"),
-    },
+    // {
+    //     path: "Homepage2",
+    //     name: "Homepage2",
+    //     component: () => import("../views/HomePage2.vue"),
+    // },
     {
         path: "GeneratePoem",
         name: "GeneratePoem",

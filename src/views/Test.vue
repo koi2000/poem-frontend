@@ -45,10 +45,6 @@
   </div>
 </template>
 <script>
-// 全屏滚动 vue-fullpage.js
-import 'fullpage.js/vendors/scrolloverflow';
-import VueFullpage from 'vue-fullpage.js'
-Vue.use(VueFullpage)
 export default {
   data() {
     return {
