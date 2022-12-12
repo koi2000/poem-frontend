@@ -5,15 +5,22 @@
 
       <div class="header">
         <div class="leftcolumn2">
-          <div class="doc-title">
-            <h1>情感分析</h1>
+          <div class="animate__animated animate__fadeInDown">
+
+            <div class="doc-title">
+              <h1>情感分析</h1>
+          </div>
+
 
           </div>
+          <div class="animate__animated animate__fadeInDown">
           <p style="color: #7a7a7a ; width: 500px;margin-top: -30px;text-align: center">昔人论诗词，有景语、情语之别，不知一切景语，皆情语也。</p>
-
+            <p style="color: #7a7a7a ; width: 500px;margin-top: -10px;text-align: right">——王国维《人间词话》</p>
+          </div>
         </div>
         <div class="rightcolumn2">
-          <div class="introduction">
+          <div class="animate__animated animate__fadeIn " style="animation-duration: 3s">
+          <div class="introductioncol">
 
             <p>古诗中的情感可以大致分为<span class="fontempa">喜、悲、怒、豪</span>四大类，通过对唐宋诗词数据集中的诗词进行分析，发现春夏之喜、秋冬之悲、晚秋之豪、深冬之怒是典型的季节情感表现。</p>
 
@@ -31,7 +38,7 @@
 
             </p>
           </div>
-
+          </div>
         </div>
 
       </div>
@@ -50,7 +57,7 @@
 </template>
 
 <script>
-
+import 'animate.css';
 import * as echarts from "../../assets/js/echarts.min.js"
 // import "../../assets/js/py/echarts.min.js"
 // import "../../assets/js/py/echarts-wordcloud.min.js"
@@ -76,12 +83,13 @@ export default {
         "animationEasingUpdate": "cubicOut",
         "animationDelayUpdate": 0,
         "color": [
-          "#b39695",
-          "#cfb9a7",
-          "#b8b0a9",
-          "#b5bfb6",
+          "#800500",
+          "#dcd1c4",
+          "#b28b8b",
+          "#9f6d70",
           "#9eb6c3",
-          "#9ea6b4",
+          "#c4d9c2",
+          "#b2bcc7",
           "#ab9293",
           "#ada585"
         ],
@@ -383,6 +391,7 @@ export default {
 </script>
 
 <style scoped>
+
 .fontempa{
   color: #bd171e;
   font-weight: bold;

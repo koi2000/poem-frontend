@@ -21,8 +21,17 @@ h1 {
 p {
     font-size: 18px;
 }
-
-
+.fontempa{
+    color: #bd171e;
+    font-weight: bold;
+}
+.introductioncol {
+    margin-top: 5%;
+    margin-bottom: 10%;
+    margin-right: 10%;
+    margin-left: 10%;
+    line-height: 1.5;
+}
 .main {
     display: flex;
     flex-direction: column;

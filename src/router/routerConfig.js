@@ -7,9 +7,19 @@ const routes = [
         component: () => import("../views/HomePage.vue"),
     },
     {
+        path: "test",
+        name: "test",
+        component: () => import("../views/test.vue"),
+    },
+    {
         path: "index2",
         name: "index2",
         component: () => import("../views/index.vue"),
+    },
+    {
+        path: "ChinaMap",
+        name: "ChinaMap",
+        component: () => import("../views/subviews/ChinaMap.vue"),
     },
     {
         path: "WordConnect",
@@ -20,6 +30,11 @@ const routes = [
         path: "SentimentAnalysis",
         name: "SentimentAnalysis",
         component: () => import("../views/subviews/SentAnalysisSankey.vue"),
+    },
+    {
+        path: "SentAnalysisPie",
+        name: "SentAnalysisPie",
+        component: () => import("../views/subviews/SentAnalysisPie.vue"),
     },
     {
         path: "Homepage2",

@@ -213,6 +213,7 @@ export default {
 </script>
 
 <style scoped>
+
 #chinaMap {
   width: 630px;
   height: 400px;
@@ -225,6 +226,7 @@ export default {
   display: flex;
   flex-direction: column;
 }
+
 
 
 </style>
