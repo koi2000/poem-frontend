@@ -15,7 +15,7 @@
 import Fetch from "@/utils/Fetch";
 import * as d3 from 'd3';
 import {queryRelatedWord} from "@/api/api"
-import { Message } from "element-ui";
+import { Message } from "element-plus";
 export default {
   name: "WordConnect",
   data() {

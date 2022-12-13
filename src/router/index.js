@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from "vue-router";
 import routerConfig from "./routerConfig"
 
-Vue.use(VueRouter)
+// Vue.use(VueRouter)
 
 let routes = []
 routerConfig.forEach((item) => {

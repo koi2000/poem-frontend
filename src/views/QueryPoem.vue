@@ -23,7 +23,7 @@ import '../assets/style/xing.less';
 import {generatePoem} from "@/api/api"
 import {generateAcrostic} from "@/api/api"
 import {queryRelatedSentence, generatePoemByGPT} from "@/api/api"
-import {Message} from "element-ui";
+import {Message} from "element-plus";
 
 export default {
   name: "QueryPoem",
