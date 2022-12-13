@@ -26,11 +26,25 @@
   // 基于准备好的dom，初始化echarts实例
   var myChart = echarts.init(document.getElementById('main'));
 
+  colorMap = [
+      "#800500",
+      "#dcd1c4",
+      "#b28b8b",
+      "#9f6d70",
+      "#9eb6c3",
+      "#c4d9c2",
+      "#b2bcc7",
+      "#ab9293",
+      "#ada585"
+  ]
+
+
   var data = [{
       value:20,
       name:"喜",
       itemStyle: {
-        color:"rgba(13,180,218,0.78)"
+        // color:"rgba(13,180,218,0.78)"
+        color:"#800500"
       },
       children:[{
         name:"情爱婚姻之情",
