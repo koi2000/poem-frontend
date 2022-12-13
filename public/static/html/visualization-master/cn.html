@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>ECharts</title>
+  <!-- 引入 echarts.js -->
+  <script src="js/echarts.min.js"></script>
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="dist/extension/dataTool.js"></script>
+  <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js" ></script>
+  <script type="text/javascript"src="http://code.jquery.com/jquery-1.4.1.min.js"></script>
+  <script src="https://echarts.baidu.com/dist/echarts.min.js" ></script>
+</head>
+
+<body>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom 600-400-->
+<div id="main" style="width: 700px;height:500px;"></div>
+<script type="text/javascript">
+  // 基于准备好的dom，初始化echarts实例
+  var myChart = echarts.init(document.getElementById('main'));
+  var option;
+  myChart.showLoading();
+  $.getJSON('cn_test.json', function(json) {
+    myChart.hideLoading();
+    myChart.setOption(option = {
+      title: {
+        text: '悲伤类词可视化图形'
+      },
+      animationDurationUpdate: 1500,
+      animationEasingUpdate: 'quinticInOut',
+      series: [{
+        type: 'graph',
+        layout: 'none',
+        // progressiveThreshold: 700,
+        data: json.nodes.map(function(node) {
+          return {
+            x: node.x,
+            y: node.y,
+            id: node.id,
+            name: node.label,
+            symbolSize: node.size,
+            itemStyle: {
+              normal: {
+                color: node.color
+              }
+            }
+          };
+        }),
+        edges: json.edges.map(function(edge) {
+          return {
+            source: edge.sourceID,
+            target: edge.targetID
+          };
+        }),
+        label: {
+          emphasis: {
+            position: 'right',
+            show: true
+          }
+        },
+        roam: true,
+        focusNodeAdjacency: true,
+        lineStyle: {
+          normal: {
+            width: 0.5,
+            curveness: 0.3,
+            opacity: 0.7
+          }
+        }
+      }]
+    }, true);
+  });
+  myChart.setOption(option);
+</script>
+</body>
+
+</html>

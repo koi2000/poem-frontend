@@ -2,14 +2,14 @@ import MainPage from "@/views/MainPage";
 import WordConnect from "@/views/WordConnect";
 const routes = [
     {
-        path: "",
+        path: "MainPage",
         name: "MainPage",
         component: () => import("../views/HomePage.vue"),
     },
     {
-        path: "test",
+        path: "",
         name: "test",
-        component: () => import("../views/test.vue"),
+        component: () => import("../views/Test.vue"),
     },
     {
         path: "index2",
@@ -32,15 +32,20 @@ const routes = [
         component: () => import("../views/subviews/SentAnalysisSankey.vue"),
     },
     {
+        path: "G6",
+        name: "G6",
+        component: () => import("../views/subviews/G6.vue"),
+    },
+    {
         path: "SentAnalysisPie",
         name: "SentAnalysisPie",
         component: () => import("../views/subviews/SentAnalysisPie.vue"),
     },
-    {
-        path: "Homepage2",
-        name: "Homepage2",
-        component: () => import("../views/HomePage2.vue"),
-    },
+    // {
+    //     path: "Homepage2",
+    //     name: "Homepage2",
+    //     component: () => import("../views/HomePage2.vue"),
+    // },
     {
         path: "GeneratePoem",
         name: "GeneratePoem",

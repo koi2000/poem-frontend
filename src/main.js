@@ -14,6 +14,12 @@ Vue.use(ElementUI)
 import * as Tableau from 'tableau-api-js'
 Vue.prototype.$tableau = Tableau
 
+// 全屏滚动 vue-fullpage.js
+// import 'fullpage.js/vendors/scrolloverflow';
+// 全屏滚动 vue-fullpage.js
+import 'fullpage.js/vendors/scrolloverflow';
+import VueFullpage from 'vue-fullpage.js'
+Vue.use(VueFullpage)
 Vue.use(Vuex)
 
 const store = new Vuex.Store({

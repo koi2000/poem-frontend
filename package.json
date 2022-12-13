@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@antv/g6": "^4.7.16",
     "@types/three": "^0.135.0",
     "animate.css": "^4.1.1",
     "ant-design-vue": "^3.2.13",
@@ -61,7 +62,7 @@
     "tableau-api-js": "^2.8.1",
     "url-loader": "^0.5.7",
     "vue": "^2.6.11",
-    "vue-fullpage.js": "^0.2.9",
+    "vue-fullpage.js": "^0.1.1",
     "vue-loader": "^10.0.0",
     "vue-router": "^3.2.0",
     "vue-style-loader": "^1.0.0",

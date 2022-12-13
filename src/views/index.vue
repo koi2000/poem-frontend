@@ -54,11 +54,6 @@
   </body>
 </template>
 <style>
-.page-content{
-  width: 900px;
-  margin: 0 auto;
-}
-
 @import "../assets/css/just-the-docs.css";
 @import "../assets/css/izmir.css";
 @import "../assets/css/docs.css";
@@ -66,6 +61,11 @@
 @import "../assets/css/fa-solid.min.css";
 @import "../assets/css/normalize.css";
 @import "../assets/css/theme.css";
+
+.page-content{
+  width: 900px;
+  margin: 0 auto;
+}
 </style>
 <script>
 

@@ -51,6 +51,8 @@ p {
     border-style:solid; */
     justify-content: center;
     align-items: center;
+    margin-top: -10%;
+    height: auto;
     /* margin: auto; */
 }
 

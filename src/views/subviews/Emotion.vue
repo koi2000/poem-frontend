@@ -1,41 +1,66 @@
 <template>
-  <div style="position: static">
-    <!--    <div class="header">-->
-    <!--      <div class="doc-title">-->
-    <!--        <h2>唐诗宋词中颜色，季节与情绪词的相似度桑基图</h2>-->
-    <!--        <h1>&nbsp;&nbsp;根据余弦相似度，对结果进行了差异放大后，将唐诗宋词中颜色，季节与情绪词的相似度绘制如下。将鼠标悬浮于某节点处，可以高亮与其相关的词项的图形。将鼠标悬浮于某一连线上，停止半秒即可高亮该连线和两节点并显示相似度值。</h1>-->
-    <!--      </div>-->
-    <!--    </div>-->
-    <div id="title"><b>唐诗宋词中颜色，季节与情绪词的相似度桑基图</b> &nbsp</div>
-    <p></p>
-    <div id="text">
-      <b>
-        <p>根据余弦相似度，对结果进行了差异放大后，将唐诗宋词中颜色，季节与情绪词的相似度绘制如下。</p>
-        <p>将鼠标悬浮于某节点处，可以高亮与其相关的词项的图形。
-        <p>
-        <p>将鼠标悬浮于某一连线上，停止半秒即可高亮该连线和两节点并显示相似度值。</p>
-      </b>
+
+  <!--    <div class="header">-->
+  <!--      <div class="doc-title">-->
+  <!--        <h2>唐诗宋词中颜色，季节与情绪词的相似度桑基图</h2>-->
+  <!--        <h1>&nbsp;&nbsp;根据余弦相似度，对结果进行了差异放大后，将唐诗宋词中颜色，季节与情绪词的相似度绘制如下。将鼠标悬浮于某节点处，可以高亮与其相关的词项的图形。将鼠标悬浮于某一连线上，停止半秒即可高亮该连线和两节点并显示相似度值。</h1>-->
+  <!--      </div>-->
+  <!--    </div>-->
+
+
+  <body>
+  <div class="main">
+    <div class="header">
+      <div class="leftcolumn">
+        <div class="doc-title">
+          <h1 style="font-family: 'kxfont';font-size: 60px;">唐诗宋词中颜色季节与情绪词的相似度桑基图</h1>
+        </div>
+      </div>
+
+      <!--      <div class="leftcolumn">-->
+      <!--        <div class="doc-title">-->
+      <!--          <h1>地理数据</h1>-->
+      <!--        </div>-->
+      <!--      </div>-->
+
+      <div class="rightcolumn">
+        <div class="animate__animated animate__fadeIn " style="animation-duration: 3s">
+          <div class="introductioncol" style="margin-top: 150px">
+            <p>根据余弦相似度，对结果进行了差异放大后，将唐诗宋词中颜色，季节与情绪词的相似度绘制如下。</p>
+            <p>将鼠标悬浮于某节点处，可以高亮与其相关的词项的图形。
+            <p>
+            <p>将鼠标悬浮于某一连线上，停止半秒即可高亮该连线和两节点并显示相似度值。</p>
+
+          </div>
+        </div>
+      </div>
 
     </div>
-    <div id="d3Chart"></div>
-
+    <div id="chartBox">
+      <div id="d3Chart"></div>
+    </div>
 
   </div>
+  </body>
+
+
+  <!--    <div id="title"><b>唐诗宋词中颜色，季节与情绪词的相似度桑基图</b> &nbsp</div>-->
+  <!--    <p></p>-->
+  <!--    <div id="text">-->
+  <!--      <b>-->
+  <!--        <p>根据余弦相似度，对结果进行了差异放大后，将唐诗宋词中颜色，季节与情绪词的相似度绘制如下。</p>-->
+  <!--        <p>将鼠标悬浮于某节点处，可以高亮与其相关的词项的图形。-->
+  <!--        <p>-->
+  <!--        <p>将鼠标悬浮于某一连线上，停止半秒即可高亮该连线和两节点并显示相似度值。</p>-->
+  <!--      </b>-->
+
+  <!--    </div>-->
 </template>
 
 <script>
 
-
-// import * as d3 from "../../assets/js/d3.v7.min.js";
 import * as d3Sankey from "../../assets/js/d3-sankey.min.js";
-
-
-// import {sankey as Sankey} from "d3-sankey";
 import * as d3 from "d3";
-// import {sankey} from "d3-sankey";
-
-// import * as d3 from 'd3'
-// import * as d3Sankey from 'd3-sankey'
 
 export default {
   name: "Emotion",
@@ -127,6 +152,16 @@ export default {
           .attr('transform', `translate(${margin}, ${margin})`)
 
       const colorScale = d3.scaleOrdinal(d3.schemeSet3)
+      const colorMap = [
+        // "#800500",
+        "#dcd1c4",
+        "#b28b8b",
+        "#9f6d70",
+        "#9eb6c3",
+        "#c4d9c2",
+        "#b2bcc7",
+        "#ab9293",
+        "#ada585"]
       const sankey = d3Sankey
           .sankey()
           .nodeWidth(30)
@@ -147,7 +182,7 @@ export default {
           .attr('class', 'node')
           .attr('indexName', (d) => d.name)
           .append('rect')
-          .attr('fill', (d, i) => colorScale(d.name))
+          .attr('fill', (d, i) => colorMap[i % 8])
           .attr('x', (d) => d.x0)
           .attr('y', (d) => d.y0)
           .attr('height', (d) => d.y1 - d.y0)
@@ -163,7 +198,7 @@ export default {
           .join('path')
           .attr('indexName', (d) => d.source.name + '-' + d.target.name)
           .attr('d', d3Sankey.sankeyLinkHorizontal())
-          .attr('stroke', (d, i) => colorScale(d.source.name))
+          .attr('stroke', (d, i) => colorMap[i % 8])
           .attr('stroke-width', (d) => d.width)
           .attr('stroke-opacity', '0.5')
           .append('title')
@@ -212,11 +247,24 @@ export default {
 </script>
 
 <style scoped>
+@import "../../assets/css/theme.css";
+
 h2 {
   font-family: 楷体;
   font-size: 50px;
   font-style: italic;
   font-weight: bold;
+}
+
+#chartBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#d3Chart {
+
 }
 
 h1 {
@@ -226,4 +274,30 @@ h1 {
   font-weight: lighter;
   font-variant: small-caps;
 }
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  /*flex-direction: column;*/
+  /*z-index: -999;*/
+  /*top: 0;*/
+}
+
+.header {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  /* border: 1em;
+  border-style:solid; */
+  justify-content: center;
+  align-items: center;
+  margin-top: -10%;
+  height: auto;
+  /* margin: auto; */
+}
+
+
 </style>

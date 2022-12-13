@@ -10,20 +10,30 @@
 
       </div>
       <div class="rightcolumn">
-        <div class="introduction">
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis inventore maxime, quisquam
-            iure perspiciatis iste amet voluptates eveniet optio pariatur velit, numquam iusto beatae
-            consequatur quae ab nam quod sunt vel labore non dolore fuga accusamus tempora! Laudantium,
-            culpa distinctio quis quos sunt tempora maiores explicabo in numquam dolorem ducimus, magni
-            incidunt cupiditate possimus officiis id. Ab, aut, consequatur laudantium accusamus tempora
-            nostrum laboriosam, sequi aliquid pariatur enim atque cumque provident error vel id odit eos
-            impedit ipsam porro sapiente iusto vero est praesentium. Eius omnis labore voluptate earum
-            adipisci quas officia iure culpa, ipsam eveniet, aut, veniam ratione odit!</p>
+        <div class="animate__animated animate__fadeIn " style="animation-duration: 3s">
+          <div class="introductioncol" style="margin-top: 150px">
+            <p>中国存在很多的名胜古迹，古代的诗人常常游历山川，借名胜古迹中抒发自己的情感，通过对唐宋诗词数据集中的诗词中出现的名胜古迹数量进行分析，发现<span
+                class="fontempa">西湖，庐山，长安，泰山</span>出现的次数较多</p>
+            <p>对中国古代各省份的诗人数量进行了统计，数据来源共已收录 42922 位诗人 1074550 首作品。信息按作者籍贯、出生或居住地分布。对其进行可视化分析，分析发现，<span class="fontempa">浙江省</span>的诗人数量最多，达到了5584人，<span
+                class="fontempa">江苏省</span>其次，达到了5144人</p>
+
+          </div>
         </div>
+
+        <!--        <div class="introduction">-->
+        <!--          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis inventore maxime, quisquam-->
+        <!--            iure perspiciatis iste amet voluptates eveniet optio pariatur velit, numquam iusto beatae-->
+        <!--            consequatur quae ab nam quod sunt vel labore non dolore fuga accusamus tempora! Laudantium,-->
+        <!--            culpa distinctio quis quos sunt tempora maiores explicabo in numquam dolorem ducimus, magni-->
+        <!--            incidunt cupiditate possimus officiis id. Ab, aut, consequatur laudantium accusamus tempora-->
+        <!--            nostrum laboriosam, sequi aliquid pariatur enim atque cumque provident error vel id odit eos-->
+        <!--            impedit ipsam porro sapiente iusto vero est praesentium. Eius omnis labore voluptate earum-->
+        <!--            adipisci quas officia iure culpa, ipsam eveniet, aut, veniam ratione odit!</p>-->
+        <!--        </div>-->
       </div>
 
     </div>
-    <div>
+    <div id="mapBox">
       <v-header :name="name" :legendArr="legendArr" :myChart="myChart"></v-header>
       <!--    <v-filter :myChart="myChart" v-if="myChart._dom"></v-filter>-->
       <div id="chinaMap"></div>
@@ -43,6 +53,8 @@ import filter from '../../components/filter/filter'
 // require("static/js/theme/final-project-theme-echart")
 let Echarts = require('echarts/lib/echarts');
 require('echarts/map/js/china'); //所需图表
+
+
 export default {
   name: "ChinaMap",
   data() {
@@ -203,8 +215,6 @@ export default {
             ]
           }
           this.init(options)
-
-
         })
       });
     },
@@ -213,20 +223,43 @@ export default {
 </script>
 
 <style scoped>
+.fontempa {
+  color: #bd171e;
+  font-weight: bold;
+}
 
 #chinaMap {
   width: 630px;
   height: 400px;
-  justify-content: center;
-  align-items: center;
+  /*justify-content: center;*/
+  /*align-items: center;*/
 
   /*position: absolute;*/
-  left: 500px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  /*left: 500px;*/
+  /*flex: 3;*/
+  /*display: flex;*/
+  /*flex-direction: column;*/
 }
 
+#mapBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.introductioncol {
+  flex: 1;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  /*flex-direction: column;*/
+  /*z-index: -999;*/
+  /*top: 0;*/
+}
 
 </style>

@@ -93,7 +93,7 @@ export default {
     //color black
   ul
     position absolute
-    right 20%
+    right 40%
     padding-right 20px
     margin-top -2px
     li
