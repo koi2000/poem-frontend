@@ -23,7 +23,7 @@
       </div>
 
     </div>
-    <div>
+    <div id="mapBox">
       <v-header :name="name" :legendArr="legendArr" :myChart="myChart"></v-header>
       <!--    <v-filter :myChart="myChart" v-if="myChart._dom"></v-filter>-->
       <div id="chinaMap"></div>
@@ -43,6 +43,8 @@ import filter from '../../components/filter/filter'
 // require("static/js/theme/final-project-theme-echart")
 let Echarts = require('echarts/lib/echarts');
 require('echarts/map/js/china'); //所需图表
+
+
 export default {
   name: "ChinaMap",
   data() {
@@ -203,8 +205,6 @@ export default {
             ]
           }
           this.init(options)
-
-
         })
       });
     },
@@ -217,16 +217,31 @@ export default {
 #chinaMap {
   width: 630px;
   height: 400px;
-  justify-content: center;
-  align-items: center;
+  /*justify-content: center;*/
+  /*align-items: center;*/
 
   /*position: absolute;*/
-  left: 500px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  /*left: 500px;*/
+  /*flex: 3;*/
+  /*display: flex;*/
+  /*flex-direction: column;*/
 }
 
+#mapBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  /*flex-direction: column;*/
+  /*z-index: -999;*/
+  /*top: 0;*/
+}
 
 </style>

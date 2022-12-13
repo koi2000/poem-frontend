@@ -3,7 +3,7 @@
 
     <div class="main2">
 
-      <div class="header">
+      <div class="header2">
         <div class="leftcolumn2">
           <div class="animate__animated animate__fadeInDown">
 
@@ -14,8 +14,8 @@
 
           </div>
           <div class="animate__animated animate__fadeInDown">
-          <p style="color: #7a7a7a ; width: 500px;margin-top: -30px;text-align: center">昔人论诗词，有景语、情语之别，不知一切景语，皆情语也。</p>
-            <p style="color: #7a7a7a ; width: 500px;margin-top: -10px;text-align: right">——王国维《人间词话》</p>
+            <p style="color: #7a7a7a ; width: 500px;margin-top: -30px; margin-left:100px;text-align: center">昔人论诗词，有景语、情语之别，不知一切景语，皆情语也。</p>
+            <p style="color: #7a7a7a ; width: 500px;margin-top: -10px; margin-left:100px;text-align: right">——王国维《人间词话》</p>
           </div>
         </div>
         <div class="rightcolumn2">
@@ -44,7 +44,7 @@
       </div>
 
 
-      <div class="leftcolumn" style="margin:auto">
+      <div class="leftcolumn2" style="margin:auto">
         <div id="a00862844d68469685e0d9aaea4ed7d0" class="chart-container" style="width:100%; height:800px;"></div>
       </div>
       <!--      <div class="header" style="margin:auto">-->
@@ -66,9 +66,8 @@ import "echarts-wordcloud/dist/echarts-wordcloud.min";
 import WordCloud from "@/views/subviews/WordCloud";
 import "../../assets/css/theme.css"
 export default {
-  name: "EmotionPlace",
+  name: "SentAnalysisSankey",
   components: {WordCloud},
-
   methods: {
     init1() {
       var chart_a00862844d68469685e0d9aaea4ed7d0 = echarts.init(
@@ -379,12 +378,13 @@ export default {
         ]
       };
       chart_a00862844d68469685e0d9aaea4ed7d0.setOption(option_a00862844d68469685e0d9aaea4ed7d0);
-      window.onresize = function () {
-        myChart.resize();
-      };
+      // window.onresize = function () {
+      //   myChart.resize();
+      // };
     },
   },
   mounted() {
+    console.log("页面创建")
     this.init1();
   }
 }
@@ -419,7 +419,7 @@ export default {
   /*position: relative;*/
   /*top: -100px;*/
 }
-.header {
+.header2 {
   flex: 1;
   display: flex;
   flex-direction: column;

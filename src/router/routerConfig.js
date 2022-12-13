@@ -2,12 +2,12 @@ import MainPage from "@/views/MainPage";
 import WordConnect from "@/views/WordConnect";
 const routes = [
     {
-        path: "",
+        path: "MainPage",
         name: "MainPage",
         component: () => import("../views/HomePage.vue"),
     },
     {
-        path: "test",
+        path: "",
         name: "test",
         component: () => import("../views/Test.vue"),
     },
@@ -30,6 +30,11 @@ const routes = [
         path: "SentimentAnalysis",
         name: "SentimentAnalysis",
         component: () => import("../views/subviews/SentAnalysisSankey.vue"),
+    },
+    {
+        path: "G6",
+        name: "G6",
+        component: () => import("../views/subviews/G6.vue"),
     },
     {
         path: "SentAnalysisPie",
