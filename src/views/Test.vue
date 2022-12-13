@@ -13,13 +13,17 @@
           </div>
         </div>
 
-
         <div class="slide">
           <div>
             <SentAnalysisPie v-if="this.index===2"/>
           </div>
         </div>
 
+        <div class="slide">
+          <div>
+            <G6 v-if="this.index===3"/>
+          </div>
+        </div>
 
         <div class="slide">
           <iframe src="static/html/visual/sun.html" width="100%" height="100%" frameborder="0"
@@ -28,6 +32,10 @@
 
         <div class="slide">
           <Emotion/>
+        </div>
+
+        <div class="slide">
+          <D3Cloud/>
         </div>
 
         <div class="slide">
@@ -41,60 +49,60 @@
         </div>
 
       </div>
-<!--      <div class="section" :key="0">-->
-<!--        <ChinaMap/>-->
-<!--      </div>-->
-<!--      <div class="section">-->
-<!--        <div>-->
-<!--          <SentAnalysisSankey v-if="this.index===1" :key="1"/>-->
-<!--        </div>-->
-<!--        &lt;!&ndash;                        <SentAnalysisSankey/>&ndash;&gt;-->
-<!--      </div>-->
+      <!--      <div class="section" :key="0">-->
+      <!--        <ChinaMap/>-->
+      <!--      </div>-->
+      <!--      <div class="section">-->
+      <!--        <div>-->
+      <!--          <SentAnalysisSankey v-if="this.index===1" :key="1"/>-->
+      <!--        </div>-->
+      <!--        &lt;!&ndash;                        <SentAnalysisSankey/>&ndash;&gt;-->
+      <!--      </div>-->
 
-<!--      <div class="section" :key="2">-->
-<!--        <div>-->
-<!--          <SentAnalysisPie v-if="this.index===2"/>-->
-<!--        </div>-->
-<!--      </div>-->
+      <!--      <div class="section" :key="2">-->
+      <!--        <div>-->
+      <!--          <SentAnalysisPie v-if="this.index===2"/>-->
+      <!--        </div>-->
+      <!--      </div>-->
 
-<!--      <div class="section" :key="3">-->
-<!--        &lt;!&ndash;        <iframe src="https://www.koi2000.top/"></iframe>&ndash;&gt;-->
-<!--        &lt;!&ndash;        <iframe src="../../public/static/html/aaaa.html" width="100%" height="600px"></iframe>&ndash;&gt;-->
-<!--        <iframe src="static/html/visual/sun.html" width="100%" height="100%" frameborder="0" scrolling="auto"></iframe>-->
-<!--      </div>-->
+      <!--      <div class="section" :key="3">-->
+      <!--        &lt;!&ndash;        <iframe src="https://www.koi2000.top/"></iframe>&ndash;&gt;-->
+      <!--        &lt;!&ndash;        <iframe src="../../public/static/html/aaaa.html" width="100%" height="600px"></iframe>&ndash;&gt;-->
+      <!--        <iframe src="static/html/visual/sun.html" width="100%" height="100%" frameborder="0" scrolling="auto"></iframe>-->
+      <!--      </div>-->
 
-<!--      <div class="section">-->
-<!--        <div class="slide">-->
-<!--          <div style="height: 100vh">-->
-<!--            <img width="100%"-->
-<!--                 src="https://cdn.cnbj1.fds.api.mi-img.com/product-images/redminote9pro/section14-8.jpg"-->
-<!--                 alt="">-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="slide">-->
-<!--          <div style="height: 100vh">-->
-<!--            <img width="100%"-->
-<!--                 src="https://cdn.cnbj1.fds.api.mi-img.com/product-images/redminote9pro/section14-6.jpg"-->
-<!--                 alt="">-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="slide">-->
-<!--          <div style="height: 100vh">-->
-<!--            <img width="100%"-->
-<!--                 src="https://cdn.cnbj1.fds.api.mi-img.com/product-images/redminote9pro/section16-2.jpg"-->
-<!--                 alt="">-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="section">-->
-<!--        <div class="box3">-->
-<!--          <div style="height: 100vh">-->
-<!--            <img height="100%"-->
-<!--                 src="https://cdn.cnbj1.fds.api.mi-img.com/product-images/redminote9pro/section11-1.jpg"-->
-<!--                 alt="">-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
+      <!--      <div class="section">-->
+      <!--        <div class="slide">-->
+      <!--          <div style="height: 100vh">-->
+      <!--            <img width="100%"-->
+      <!--                 src="https://cdn.cnbj1.fds.api.mi-img.com/product-images/redminote9pro/section14-8.jpg"-->
+      <!--                 alt="">-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--        <div class="slide">-->
+      <!--          <div style="height: 100vh">-->
+      <!--            <img width="100%"-->
+      <!--                 src="https://cdn.cnbj1.fds.api.mi-img.com/product-images/redminote9pro/section14-6.jpg"-->
+      <!--                 alt="">-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--        <div class="slide">-->
+      <!--          <div style="height: 100vh">-->
+      <!--            <img width="100%"-->
+      <!--                 src="https://cdn.cnbj1.fds.api.mi-img.com/product-images/redminote9pro/section16-2.jpg"-->
+      <!--                 alt="">-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--      </div>-->
+      <!--      <div class="section">-->
+      <!--        <div class="box3">-->
+      <!--          <div style="height: 100vh">-->
+      <!--            <img height="100%"-->
+      <!--                 src="https://cdn.cnbj1.fds.api.mi-img.com/product-images/redminote9pro/section11-1.jpg"-->
+      <!--                 alt="">-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--      </div>-->
     </full-page>
     <div>
     </div>
@@ -106,9 +114,12 @@ import EmotionPlace from "@/views/subviews/EmotionPlace";
 import SentAnalysisSankey from "@/views/subviews/SentAnalysisSankey";
 import SentAnalysisPie from "@/views/subviews/SentAnalysisPie";
 import Emotion from "@/views/subviews/Emotion";
+import G6 from "@/views/G6";
+import WordCloud from "@/views/subviews/WordCloud";
+import D3Cloud from "@/views/D3Cloud";
 
 export default {
-  components: {Emotion, ChinaMap, EmotionPlace, SentAnalysisSankey, SentAnalysisPie},
+  components: {WordCloud, G6, Emotion, ChinaMap, EmotionPlace, SentAnalysisSankey, SentAnalysisPie,D3Cloud},
   data() {
     return {
       src: "../../public/static/html/aaaa.html",

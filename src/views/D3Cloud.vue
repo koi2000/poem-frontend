@@ -1,172 +1,270 @@
 <template>
-  <div>
-    <svg style="background-color: black" :width="width" :height="height">
-      <a class="fontA" v-for="(tag, index) in tags" :key="`tag-${index}`">
-        <text
-            :id="tag.id"
-            :x="tag.x"
-            :y="tag.y"
-            :font-size="20 * (600 / (600 - tag.z))"
-            :fill-opacity="(400 + tag.z) / 600"
-            @mousemove="listenerMove($event)"
-            @mouseout="listenerOut($event)"
-            @click="clickToPage"
-        >
-          {{ tag.text }}
-        </text>
-      </a>
-    </svg>
-  </div>
+  <section class="cloud-bed">
+    <div class="cloud-box">
+      <span
+          v-for="(item, index) in dataList"
+          :key="index"
+          @click="getDataInfo(item)"
+      >
+        {{ item.name }}
+      </span>
+    </div>
+  </section>
 </template>
 
 <script>
 export default {
   name: "D3Cloud",
-  //数据，宽，高，半径，半径一般位宽高的一半。
-  // props: ["data", "width", "height", "RADIUS"],
   data() {
     return {
-      width: 600, //svg宽度
-      height: 600, //svg高度
-      tagsNum: 0, //标签数量
-      RADIUS: 300, //球的半径
-      speedX: Math.PI / 360 / 1.5, //球一帧绕x轴旋转的角度
-      speedY: Math.PI / 360 / 1.5, //球-帧绕y轴旋转的角度
-      tags: [],
-      data: [
-        "金晨",
-        "昆凌",
-        "李冰冰",
-        "刘诗诗",
-        "刘雯",
-        "刘亦菲",
-        "林心如",
-        "林志玲",
-        "李湘",
-        "李亚男",
-        "李若彤",
-        "李沁",
-        "李嘉欣",
-        "林依晨",
-        "刘嘉玲",
-        "闰妮",
-        "李宇春",
-        "李晟",
-        "罗震环",
-        "刘雨欣",
-        "李波儿",
-        "黎姿",
-        "张敏",
-        "梁小冰",
-        "黎美娴",
-        "李彩桦",
-        "林允儿",
-        "米雪",
-        "李菲儿",
-        "娄艺潇",
-        "李金铭",
-        "李萌萌",
-      ],
-      timer: null,
-    };
+      timer: 10, // 球体转动速率
+      radius: 0, // 词云球体面积大小
+      dtr: Math.PI/180, //鼠标滑过球体转动速度
+      active: false, // 默认加载是否开启转动
+      lasta: 0, // 上下转动
+      lastb: 0.5, // 左右转动
+      distr: true,
+      tspeed: 0, // 鼠标移动上去时球体转动
+      mouseX: 0,
+      mouseY: 0,
+      tagAttrList: [],
+      tagContent: null,
+      cloudContent: null,
+      sinA: '',
+      cosA: '',
+      sinB: '',
+      cosB: '',
+      sinC: '',
+      cosC: '',
+      dataList: [
+        {
+          name: '测试1',
+          value: '1'
+        },
+        {
+          name: '测试2',
+          value: '2'
+        },
+        {
+          name: '测试3',
+          value: '3'
+        },
+        {
+          name: '测试4',
+          value: '4'
+        },
+        {
+          name: '测312试5',
+          value: '5'
+        },
+        {
+          name: '测312321试6',
+          value: '6'
+        },
+        {
+          name: '测321312试7',
+          value: '7'
+        },
+        {
+          name: '测12323123试8',
+          value: '8'
+        },
+        {
+          name: '测32312试5',
+          value: '5'
+        },
+        {
+          name: '3123123测试6',
+          value: '6'
+        },
+        {
+          name: '测32131试7',
+          value: '7'
+        },
+        {
+          name: '测试31231238',
+          value: '8'
+        }
+      ]
+    }
   },
-  computed: {
-    CX() {
-      //球心x坐标
-      return this.width / 2;
-    },
-    CY() {
-      //球心y坐标
-      return this.height / 2;
-    },
+  mounted () {
+    this.$nextTick(() => {
+      this.radius = document.querySelector('.cloud-box').offsetWidth / 2
+      this.initWordCloud()
+    })
   },
-  created() {
-    this.initData();
+  beforeDestroy () {
+    clearInterval(this.timer)
   },
-  methods: {
-    // 初始化数据
-    initData() {
-      //初始化标签位置
-      let tags = [];
-      this.tagsNum = this.data.length;
-      for (let i = 0; i < this.data.length; i++) {
-        let tag = {};
-        let k = -1 + (2 * (i + 1) - 1) / this.tagsNum;
-        let a = Math.acos(k);
-        let b = a * Math.sqrt(this.tagsNum * Math.PI); //计算标签相对于球心的角度
-        tag.text = this.data[i];
-        tag.x = this.CX + this.RADIUS * Math.sin(a) * Math.cos(b); //根据标签角度求出标签的x,y,z坐标
-        tag.y = this.CY + this.RADIUS * Math.sin(a) * Math.sin(b);
-        tag.z = this.RADIUS * Math.cos(a);
-        tag.id = i; // 给标签添加id
-        tags.push(tag);
-        // console.log(tag);
-      }
-      this.tags = tags; //让vue替我们完成视图更新
+  methods:{
+    // 获取点击文本信息
+    getDataInfo (item) {
+      console.log(item, 'item')
     },
-    // 纵向旋转
-    rotateX(angleX) {
-      var cos = Math.cos(angleX);
-      var sin = Math.sin(angleX);
-      for (let tag of this.tags) {
-        var y1 = (tag.y - this.CY) * cos - tag.z * sin + this.CY;
-        var z1 = tag.z * cos + (tag.y - this.CY) * sin;
-        tag.y = y1;
-        tag.z = z1;
+    initWordCloud () {
+      this.cloudContent = document.querySelector('.cloud-box');
+      this.tagContent = this.cloudContent.getElementsByTagName('span');
+      for (let i = 0; i < this.tagContent.length; i++) {
+        let tagObj = {};
+        tagObj.offsetWidth = this.tagContent[i].offsetWidth;
+        tagObj.offsetHeight = this.tagContent[i].offsetHeight;
+        this.tagAttrList.push(tagObj);
       }
+      this.sineCosine(0, 0, 0);
+      this.positionAll();
+      this.cloudContent.onmouseover = () => {
+        this.active=true;
+      };
+      this.cloudContent.onmouseout = () => {
+        this.active=false;
+      };
+      this.cloudContent.onmousemove = (ev) => {
+        let oEvent = window.event || ev;
+        this.mouseX = oEvent.clientX - (this.cloudContent.offsetLeft + this.cloudContent.offsetWidth/2);
+        this.mouseY = oEvent.clientY - (this.cloudContent.offsetTop + this.cloudContent.offsetHeight/2);
+        this.mouseX/= 5;
+        this.mouseY/= 5;
+      };
+      setInterval(this.update, this.timer);
     },
-    // 横向旋转
-    rotateY(angleY) {
-      var cos = Math.cos(angleY);
-      var sin = Math.sin(angleY);
-      for (let tag of this.tags) {
-        var x1 = (tag.x - this.CX) * cos - tag.z * sin + this.CX;
-        var z1 = tag.z * cos + (tag.x - this.CX) * sin;
-        tag.x = x1;
-        tag.z = z1;
+    positionAll () {
+      let phi = 0;
+      let theta = 0;
+      let max = this.tagAttrList.length;
+      let aTmp = [];
+      let oFragment = document.createDocumentFragment();
+      //随机排序
+      for (let i=0; i < this.tagContent.length; i++) {
+        aTmp.push(this.tagContent[i]);
       }
-    },
-    // 运动函数
-    runTags() {
-      if (typeof this.timer === "number") {
-        clearInterval(this.timer);
-        this.timer = null;
+      aTmp.sort(() => {
+        return Math.random() < 0.5 ? 1 : -1;
+      });
+      for (let i = 0; i < aTmp.length; i++) {
+        oFragment.appendChild(aTmp[i]);
       }
-      let timer = setInterval(() => {
-        this.rotateX(this.speedX);
-        this.rotateY(this.speedY);
-      }, 17);
-      this.timer = timer;
-    },
-    // 监听移入事件
-    listenerMove(e) {
-      if (e.target.id) {
-        clearInterval(this.timer);
-      }
-    },
-    // 监听移出事件
-    listenerOut(e) {
-      if (e.target.id) {
-        this.runTags();
+      this.cloudContent.appendChild(oFragment);
+      for(let i = 1; i < max + 1; i++){
+        if (this.distr) {
+          phi = Math.acos(-1 + (2 * i - 1) / max);
+          theta = Math.sqrt(max * Math.PI) * phi;
+        } else {
+          phi = Math.random() * (Math.PI);
+          theta = Math.random() * (2 * Math.PI);
+        }
+        //坐标变换
+        this.tagAttrList[i-1].cx = this.radius * Math.cos(theta) * Math.sin(phi);
+        this.tagAttrList[i-1].cy = this.radius * Math.sin(theta) * Math.sin(phi);
+        this.tagAttrList[i-1].cz = this.radius * Math.cos(phi);
+        this.tagContent[i-1].style.left = this.tagAttrList[i-1].cx + this.cloudContent.offsetWidth / 2 - this.tagAttrList[i-1].offsetWidth / 2 + 'px';
+        this.tagContent[i-1].style.top = this.tagAttrList[i-1].cy + this.cloudContent.offsetHeight / 2 - this.tagAttrList[i-1].offsetHeight / 2 + 'px';
       }
     },
-    // 点击事件
-    clickToPage() {},
-  },
-  mounted() {
-    this.runTags();
-  },
+    update () {
+      let angleBasicA;
+      let angleBasicB;
+
+      if (this.active) {
+        angleBasicA = (-Math.min(Math.max(-this.mouseY, -200 ), 200) / this.radius) * this.tspeed;
+        angleBasicB = (Math.min(Math.max(-this.mouseX, -200 ), 200) / this.radius) * this.tspeed;
+      } else {
+        angleBasicA = this.lasta * 0.98;
+        angleBasicB = this.lastb * 0.98;
+      }
+
+      //默认转动是后是否需要停下
+      // lasta=a;
+      // lastb=b;
+
+      // if(Math.abs(a)<=0.01 && Math.abs(b)<=0.01)
+      // {
+      // return;
+      // }
+      this.sineCosine(angleBasicA, angleBasicB, 0);
+      for(let j = 0; j < this.tagAttrList.length; j++) {
+        let rx1 = this.tagAttrList[j].cx;
+        let ry1 = this.tagAttrList[j].cy * this.cosA + this.tagAttrList[j].cz * (-this.sinA);
+        let rz1 = this.tagAttrList[j].cy * this.sinA + this.tagAttrList[j].cz * this.cosA;
+
+        let rx2 = rx1 * this.cosB + rz1 * this.sinB;
+        let ry2 = ry1;
+        let rz2 = rx1 * (-this.sinB) + rz1 * this.cosB;
+
+        let rx3 = rx2 * this.cosC + ry2 * (-this.sinC);
+        let ry3 = rx2 * this.sinC + ry2 * this.cosC;
+        let rz3 = rz2;
+        this.tagAttrList[j].cx = rx3;
+        this.tagAttrList[j].cy = ry3;
+        this.tagAttrList[j].cz = rz3;
+
+        let per = 350 / (350 + rz3);
+
+        this.tagAttrList[j].x = rx3 * per - 2;
+        this.tagAttrList[j].y = ry3 * per;
+        this.tagAttrList[j].scale = per;
+        this.tagAttrList[j].alpha = per;
+
+        this.tagAttrList[j].alpha = (this.tagAttrList[j].alpha - 0.6) * (10/6);
+      }
+      this.doPosition();
+      this.depthSort();
+    },
+    doPosition() {
+      let len = this.cloudContent.offsetWidth/2;
+      let height = this.cloudContent.offsetHeight/2;
+      for (let i=0;i < this.tagAttrList.length;i++) {
+        this.tagContent[i].style.left = this.tagAttrList[i].cx + len - this.tagAttrList[i].offsetWidth/2 + 'px';
+        this.tagContent[i].style.top = this.tagAttrList[i].cy + height - this.tagAttrList[i].offsetHeight/2 + 'px';
+        this.tagContent[i].style.fontSize = Math.ceil(12 * this.tagAttrList[i].scale/2) + 8 + 'px';
+        this.tagContent[i].style.filter = "alpha(opacity="+100 * this.tagAttrList[i].alpha+")";
+        this.tagContent[i].style.opacity = this.tagAttrList[i].alpha;
+      }
+    },
+    depthSort(){
+      let aTmp = [];
+      for (let i = 0; i < this.tagContent.length; i++) {
+        aTmp.push(this.tagContent[i]);
+      }
+      aTmp.sort((item1, item2) => item2.cz - item1.cz);
+      for (let i = 0; i < aTmp.length; i++) {
+        aTmp[i].style.zIndex=i;
+      }
+    },
+    sineCosine (a, b, c) {
+      this.sinA = Math.sin(a * this.dtr);
+      this.cosA = Math.cos(a * this.dtr);
+      this.sinB = Math.sin(b * this.dtr);
+      this.cosB = Math.cos(b * this.dtr);
+      this.sinC = Math.sin(c * this.dtr);
+      this.cosC = Math.cos(c * this.dtr);
+    }
+  }
 };
 </script>
 
 
-<style scoped>
-.fontA {
-  fill: #60cae9;
-  font-weight: bold;
-}
-.fontA:hover {
-  fill: #ffffff;
-  cursor: pointer;
+<style scoped lang="less">
+.cloud-bed {
+  width: 100%;
+  height: 100%;
+  .cloud-box{
+    position:relative;
+    margin:20px auto 0px;
+    width: 100%;
+    height: 100%;
+    background:	#00000000;
+    span{
+      position: absolute;
+      padding: 3px 6px;
+      top: 0px;
+      font-weight: bold;
+      text-decoration:none;
+      left:0px;
+      background-image: linear-gradient(to bottom, red, #fff);
+      background-clip: text;
+      color: transparent;
+    }
+  }
 }
 </style>
