@@ -1,28 +1,37 @@
 <template>
-
+  <div class="animate__animated animate__fadeIn " style="animation-duration: 3s">
   <body>
   <div class="main">
-    <div id="mapBox">
-      <v-header :name="name" :legendArr="legendArr" :myChart="myChart"></v-header>
-      <!--    <v-filter :myChart="myChart" v-if="myChart._dom"></v-filter>-->
-      <div id="chinaMap"></div>
+    <div class="mapchart">
+
+      <div id="mapBox">
+
+        <v-header :name="name" :legendArr="legendArr" :myChart="myChart"></v-header>
+        <!--    <v-filter :myChart="myChart" v-if="myChart._dom"></v-filter>-->
+<!--        <div class="animate__animated animate__fadeIn " style="animation-duration: 3s">-->
+        <div id="chinaMap" ></div>
+<!--        </div>-->
+      </div>
     </div>
+
     <div class="header2">
-      <div class="upcolumn">
+      <div class="uprow">
         <div class="doc-title">
+<!--          <div class="animate__animated animate__fadeIn " style="animation-duration: 3s">-->
           <h1>地理数据</h1>
+<!--          </div>-->
         </div>
 
       </div>
-      <div class="downcolumn">
-        <div class="animate__animated animate__fadeIn " style="animation-duration: 3s">
+      <div class="downrow">
+<!--        <div class="animate__animated animate__fadeIn " style="animation-duration: 3s">-->
           <div class="introductioncol" style="margin-top: 150px">
             <p>中国存在很多的名胜古迹，古代的诗人常常游历山川，借名胜古迹中抒发自己的情感，通过对唐宋诗词数据集中的诗词中出现的名胜古迹数量进行分析，发现<span
                 class="fontempa">西湖，庐山，长安，泰山</span>出现的次数较多</p>
             <p>对中国古代各省份的诗人数量进行了统计，数据来源共已收录 42922 位诗人 1074550 首作品。信息按作者籍贯、出生或居住地分布。对其进行可视化分析，分析发现，<span class="fontempa">浙江省</span>的诗人数量最多，达到了5584人，<span
                 class="fontempa">江苏省</span>其次，达到了5144人</p>
 
-          </div>
+<!--          </div>-->
         </div>
 
         <!--        <div class="introduction">-->
@@ -42,6 +51,7 @@
 
   </div>
   </body>
+  </div>
 </template>
 
 <script>
@@ -228,6 +238,11 @@ export default {
   color: #bd171e;
   font-weight: bold;
 }
+.mapchart{
+  flex: 1;
+  align-items: center;
+  margin-left: 10%;
+}
 .header2 {
   flex: 1;
   display: flex;
@@ -240,13 +255,13 @@ export default {
   height: auto;
   /* margin: auto; */
 }
-.upcolumn{
+.uprow{
   flex:1;
   width: 500px;
 }
-.downcolumn{
-  flex:1
-
+.downrow{
+  flex:1;
+  margin-top: -16%;
 }
 
 #chinaMap {

@@ -22,8 +22,9 @@ p {
     font-size: 18px;
 }
 .fontempa{
-    color: #bd171e;
+    color: #A31B28;
     font-weight: bold;
+    font-size: larger
 }
 .introductioncol {
     margin-top: 5%;
@@ -84,6 +85,7 @@ p {
     margin-bottom: 5%;
     margin-right: 20%;
     margin-left: 10%;
+    line-height: 1.5;
 }
 
 .doc-title {

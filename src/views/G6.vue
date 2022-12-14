@@ -14,10 +14,11 @@
         <div class="introduction">
           <div class="animate__animated animate__fadeIn" style="animation-duration: 2s">
             <h1 style="top:-20px;">
-              词频<br>词语相似度
+              词频<span class="fontempa" style="font-size: larger">|</span>余弦相似度
             </h1>
             <p>
-              词频-词语相似度词频-词语相似度词频-词语相似度词频-词语相似度词频-词语相似度词频-词语相似度词频-词语相似度词频-词语相似度词频-词语相似度词频-词语相似度
+              通过统计唐宋诗词的词频，筛选词频最高的<span class="fontempa">前一百</span>个词。可以通过拖拽、点击等交互，查看词语出现的词频。
+              <br>其中红色气泡是词频最高的前一百个词语，而白色的小气泡是中心词语对应Word2Vec词嵌入的余弦相似度<span class="fontempa">大于0.45</span>的单词。
 
             </p>
           </div>

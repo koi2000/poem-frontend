@@ -46,7 +46,9 @@
 
 
       <div class="leftcolumn2" style="margin:auto">
+        <div class="animate__animated animate__fadeIn " style="animation-duration: 3s">
         <div id="a00862844d68469685e0d9aaea4ed7d0" class="chart-container" style="width:100%; height:800px;"></div>
+        </div>
       </div>
       <!--      <div class="header" style="margin:auto">-->
       <!--        <div id="5d4cf58ea685498a91237dceaee927c5" ref="wordcloud" class="chart-container" style="width:900px; height:500px;"></div>-->
