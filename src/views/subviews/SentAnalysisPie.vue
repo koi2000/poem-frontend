@@ -36,7 +36,10 @@
       </div>
 
       <div class="leftcolumn2" style="margin:auto">
+        <div class="animate__animated animate__fadeIn " style="animation-duration: 1s">
+
         <div id="6dfb6e046ebb4dc3aacd6de256b615bd" class="chart-container" style="width:100%; height:800px;"></div>
+        </div>
       </div>
 
       <!--      <div class="header" style="margin:auto">-->
@@ -56,7 +59,8 @@ import * as echarts from "../../assets/js/echarts.min.js"
 import "echarts-wordcloud/dist/echarts-wordcloud";
 import "echarts-wordcloud/dist/echarts-wordcloud.min";
 import WordCloud from "@/views/subviews/WordCloud";
-import "../../assets/css/theme.css"
+import "../../assets/css/theme.css";
+import "../../assets/css/lrtheme.css";
 export default {
   name: "EmotionPlace",
   components: {WordCloud},
@@ -619,53 +623,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
 
 
-.main2 {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100vh;
-  /*overflow-y: scroll;*/
-
-  /*flex-direction: column;*/
-  /*z-index: -999;*/
-  /*top: 0;*/
-}
-.leftcolumn2 {
-  width: 500px;
-  flex: 1;
-  /*position: relative;*/
-  /*top: -100px;*/
-
-}
-.rightcolumn2 {
-  flex:2;
-  /*position: relative;*/
-  /*top: -100px;*/
-}
-.header2 {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  /* border: 1em;
-  border-style:solid; */
-  /*justify-content: center;*/
-  /*align-items: center;*/
-  /* margin: auto; */
-}
-.doc-title {
-  margin-top: 50%;
-  margin-bottom: 0%;
-  margin-right: 20%;
-  margin-left: 20%;
-}
-.introduction {
-  margin-top: 5%;
-  margin-bottom: 10%;
-  margin-right: 10%;
-  margin-left: 10%;
-}
 
 </style>

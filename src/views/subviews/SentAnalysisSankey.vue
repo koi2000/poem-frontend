@@ -45,7 +45,9 @@
 
 
       <div class="leftcolumn2" style="margin:auto">
+        <div class="animate__animated animate__fadeIn " style="animation-duration: 3s">
         <div id="a00862844d68469685e0d9aaea4ed7d0" class="chart-container" style="width:100%; height:800px;"></div>
+        </div>
       </div>
       <!--      <div class="header" style="margin:auto">-->
       <!--        <div id="5d4cf58ea685498a91237dceaee927c5" ref="wordcloud" class="chart-container" style="width:900px; height:500px;"></div>-->
@@ -64,7 +66,8 @@ import * as echarts from "../../assets/js/echarts.min.js"
 import "echarts-wordcloud/dist/echarts-wordcloud";
 import "echarts-wordcloud/dist/echarts-wordcloud.min";
 import WordCloud from "@/views/subviews/WordCloud";
-import "../../assets/css/theme.css"
+import "../../assets/css/theme.css";
+import "../../assets/css/lrtheme.css";
 export default {
   name: "SentAnalysisSankey",
   components: {WordCloud},
@@ -390,55 +393,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
 
-.fontempa{
-  color: #bd171e;
-  font-weight: bold;
-}
-.main2 {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100vh;
-  /*overflow-y: scroll;*/
-
-  /*flex-direction: column;*/
-  /*z-index: -999;*/
-  /*top: 0;*/
-}
-.leftcolumn2 {
-  width: 500px;
-  flex: 1;
-  /*position: relative;*/
-  /*top: -100px;*/
-
-}
-.rightcolumn2 {
-  flex:2;
-  /*position: relative;*/
-  /*top: -100px;*/
-}
-.header2 {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  /* border: 1em;
-  border-style:solid; */
-  /*justify-content: center;*/
-  /*align-items: center;*/
-  /* margin: auto; */
-}
-.doc-title {
-  margin-top: 50%;
-  margin-bottom: 0%;
-  margin-right: 20%;
-  margin-left: 20%;
-}
-.introduction {
-  margin-top: 5%;
-  margin-bottom: 10%;
-  margin-right: 10%;
-  margin-left: 10%;
-}
 </style>

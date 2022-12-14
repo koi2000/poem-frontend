@@ -4,6 +4,8 @@
   flex-direction: row;
   width: 100%;
   height: 100vh;
+  /*justify-content: center;*/
+  align-items: center;
   /*overflow-y: scroll;*/
 
   /*flex-direction: column;*/
@@ -13,6 +15,8 @@
 .leftcolumn2 {
   width: 500px;
   flex: 1;
+  margin-right: auto;
+
   /*position: relative;*/
   /*top: -100px;*/
 
