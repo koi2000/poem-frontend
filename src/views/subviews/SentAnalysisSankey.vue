@@ -6,38 +6,39 @@
       <div class="header2">
         <div class="leftcolumn2">
           <div class="animate__animated animate__fadeInDown">
-
             <div class="doc-title">
               <h1>情感分析</h1>
+            </div>
           </div>
 
-
-          </div>
           <div class="animate__animated animate__fadeInDown">
-            <p style="color: #7a7a7a ; width: 500px;margin-top: -30px; margin-left:100px;text-align: center">昔人论诗词，有景语、情语之别，不知一切景语，皆情语也。</p>
-            <p style="color: #7a7a7a ; width: 500px;margin-top: -10px; margin-left:100px;text-align: right">——王国维《人间词话》</p>
+            <p style="color: #7a7a7a ; width: 500px;margin-top: -30px; margin-left:100px;text-align: center">
+              昔人论诗词，有景语、情语之别，不知一切景语，皆情语也。</p>
+            <p style="color: #7a7a7a ; width: 500px;margin-top: -10px; margin-left:100px;text-align: right">
+              ——王国维《人间词话》</p>
           </div>
         </div>
         <div class="rightcolumn2">
           <div class="animate__animated animate__fadeIn " style="animation-duration: 3s">
-          <div class="introductioncol">
+            <div class="introductioncol">
 
-            <p>古诗中的情感可以大致分为<span class="fontempa">喜、悲、怒、豪</span>四大类，通过对唐宋诗词数据集中的诗词进行分析，发现春夏之喜、秋冬之悲、晚秋之豪、深冬之怒是典型的季节情感表现。</p>
+              <p>古诗中的情感可以大致分为<span class="fontempa">喜、悲、怒、豪</span>四大类，通过对唐宋诗词数据集中的诗词进行分析，发现春夏之喜、秋冬之悲、晚秋之豪、深冬之怒是典型的季节情感表现。
+              </p>
 
-            <p><span class="fontempa">边塞军旅诗</span>常常透露出诗人建功立业的热情，又不乏远离亲人的离情别恨。<br>
+              <p><span class="fontempa">边塞军旅诗</span>常常透露出诗人建功立业的热情，又不乏远离亲人的离情别恨。<br>
 
-              <span class="fontempa">写景咏物诗</span>常常托物言志，表达诗人高洁的志向，亦可借景抒怀，使情景交融。<br>
+                <span class="fontempa">写景咏物诗</span>常常托物言志，表达诗人高洁的志向，亦可借景抒怀，使情景交融。<br>
 
-              <span class="fontempa">赠友送别诗</span>常寄依依惜别之情，却也不乏豪迈洒脱之作，表达对友人的美好祝愿。<br>
+                <span class="fontempa">赠友送别诗</span>常寄依依惜别之情，却也不乏豪迈洒脱之作，表达对友人的美好祝愿。<br>
 
-              <span class="fontempa">咏史怀古诗</span>多痛惜先贤、思考历史，亦有忧国伤时、怀古伤今之作。<br>
+                <span class="fontempa">咏史怀古诗</span>多痛惜先贤、思考历史，亦有忧国伤时、怀古伤今之作。<br>
 
-              <span class="fontempa">羁旅行役诗</span>，充满报国无门的孤苦愤恨，也蕴藏感念亲友的思乡之情。<br>
+                <span class="fontempa">羁旅行役诗</span>，充满报国无门的孤苦愤恨，也蕴藏感念亲友的思乡之情。<br>
 
-              <span class="fontempa">山水田园诗</span>表达了热爱自然、向往自由之意，亦有渴望归隐的闲适淡泊之心。<br>
+                <span class="fontempa">山水田园诗</span>表达了热爱自然、向往自由之意，亦有渴望归隐的闲适淡泊之心。<br>
 
-            </p>
-          </div>
+              </p>
+            </div>
           </div>
         </div>
 
@@ -50,7 +51,7 @@
       <!--      <div class="header" style="margin:auto">-->
       <!--        <div id="5d4cf58ea685498a91237dceaee927c5" ref="wordcloud" class="chart-container" style="width:900px; height:500px;"></div>-->
       <!--      </div>-->
-<!--      <div ref="wordcloud" class="wordcloud"></div>-->
+      <!--      <div ref="wordcloud" class="wordcloud"></div>-->
 
     </div>
   </div>
@@ -66,6 +67,7 @@ import "echarts-wordcloud/dist/echarts-wordcloud.min";
 import WordCloud from "@/views/subviews/WordCloud";
 import "../../assets/css/theme.css";
 import "../../assets/css/lrtheme.css";
+
 export default {
   name: "SentAnalysisSankey",
   components: {WordCloud},
@@ -94,9 +96,9 @@ export default {
           "#ada585"
         ],
 
-          textStyle: {
-            fontFamily: 'kxfont'
-          },
+        textStyle: {
+          fontFamily: 'kxfont'
+        },
         "series": [
           {
             "type": "sankey",
@@ -391,12 +393,11 @@ export default {
 }
 </script>
 
-<style >
+<style>
 
-  /*flex-direction: column;*/
-  /*z-index: -999;*/
-  /*top: 0;*/
-}
+/*flex-direction: column;*/
+/*z-index: -999;*/
+/*top: 0;*/
 .leftcolumn2 {
   width: 500px;
   flex: 1;
@@ -404,11 +405,13 @@ export default {
   /*top: -100px;*/
 
 }
+
 .rightcolumn2 {
-  flex:2;
+  flex: 2;
   /*position: relative;*/
   /*top: -100px;*/
 }
+
 .header2 {
   flex: 1;
   display: flex;
@@ -420,12 +423,14 @@ export default {
   /*align-items: center;*/
   /* margin: auto; */
 }
+
 .doc-title {
   margin-top: 50%;
   margin-bottom: 0%;
   margin-right: 20%;
   margin-left: 20%;
 }
+
 .introduction {
   margin-top: 5%;
   margin-bottom: 10%;

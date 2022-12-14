@@ -9,6 +9,11 @@
                   scrolling="auto"></iframe>
         </div>
 
+<!--        <div class="slide">-->
+<!--          <iframe src="static/html/timeriver/themeriver-scatter.html" width="100%" height="100%" frameborder="0"-->
+<!--                  scrolling="auto"></iframe>-->
+<!--        </div>-->
+
         <div class="slide">
           <ChinaMap/>
         </div>
@@ -44,19 +49,16 @@
         <div class="slide">
           <!--          <div ref="react"></div>-->
           <!--          <Three/>-->
-<!--          <react :component="component" :message="message"/>-->
+          <!--          <react :component="component" :message="message"/>-->
+          <h1>诗词类型词云图</h1>
           <div style="font-family: 'kxfont';">
-            <iframe src="http://localhost:3000" width="100%" height="800px" frameborder="0"
+
+            <iframe src="https://koi2000.top/" width="100%" height="800px" style="margin-top: -100px" frameborder="0"
                     scrolling="auto"></iframe>
           </div>
 
-<!--          <Three/>-->
-<!--          <my-react-component :message="message" @onMyEvent="parentClickHandle"/>-->
-          <div>
-<!--            <my-react-component :message="message" @onMyEvent="parentClickHandle"/>-->
-<!--            <my-react-component :message="message" />-->
-<!--            <react :component="component" :message="message" />-->
-          </div>
+          <!--          <Three/>-->
+          <!--          <my-react-component :message="message" @onMyEvent="parentClickHandle"/>-->
 
         </div>
 
@@ -144,10 +146,12 @@ import Three from '../components/Three'
 import ReactDOM from 'react-dom'
 import React from 'react'
 import reactTest from './react_test'
-import { ReactInVue } from 'vuera'
+import {ReactInVue} from 'vuera'
+import HomePage from "@/views/HomePage";
 
 export default {
   components: {
+    HomePage,
     'my-react-component': ReactInVue(Three),
     // components: { react: ReactWrapper },
     // 'my-react-component': MyReactComponent,
@@ -192,7 +196,7 @@ export default {
     }
   },
   methods: {
-    parentClickHandle(data){
+    parentClickHandle(data) {
       console.log(data);
     },
     next() {

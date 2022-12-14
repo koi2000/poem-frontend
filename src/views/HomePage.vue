@@ -3,9 +3,9 @@
   <body>
   <div class="main">
 
-    <MainPage/>
+<!--    <MainPage/>-->
 
-    <EmotionPlace/>
+<!--    <EmotionPlace/>-->
 
     <div class="header">
       <div class="rightcolumn">
