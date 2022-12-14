@@ -34,7 +34,7 @@ const routes = [
     {
         path: "G6",
         name: "G6",
-        component: () => import("../views/subviews/G6.vue"),
+        component: () => import("../views/G6.vue"),
     },
     {
         path: "SentAnalysisPie",

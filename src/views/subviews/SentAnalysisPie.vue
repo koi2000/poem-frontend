@@ -3,21 +3,19 @@
 
     <div class="main2">
 
-      <div class="header">
+      <div class="header2">
         <div class="leftcolumn2">
           <div class="animate__animated animate__fadeInDown">
 
             <div class="doc-title">
               <h1>情感分析</h1>
-          </div>
+            </div>
 
 
           </div>
           <div class="animate__animated animate__fadeInDown">
-          <p style="color: #7a7a7a ; width: 500px;margin-top: -30px;text-align: center">昔人论诗词，有景语、情语之别，不知一切景语，皆情语也。</p>
-            <p style="color: #7a7a7a ; width: 500px;margin-top: -10px;text-align: right">——王国维《人间词话》</p>
-
-
+            <p style="color: #7a7a7a ; width: 500px;margin-top: -30px; margin-left:100px;text-align: center">昔人论诗词，有景语、情语之别，不知一切景语，皆情语也。</p>
+            <p style="color: #7a7a7a ; width: 500px;margin-top: -10px; margin-left:100px;text-align: right">——王国维《人间词话》</p>
           </div>
         </div>
         <div class="rightcolumn2">
@@ -37,7 +35,7 @@
 
       </div>
 
-      <div class="leftcolumn" style="margin:auto">
+      <div class="leftcolumn2" style="margin:auto">
         <div id="6dfb6e046ebb4dc3aacd6de256b615bd" class="chart-container" style="width:100%; height:800px;"></div>
       </div>
 
@@ -647,7 +645,7 @@ export default {
   /*position: relative;*/
   /*top: -100px;*/
 }
-.header {
+.header2 {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -662,6 +660,12 @@ export default {
   margin-bottom: 0%;
   margin-right: 20%;
   margin-left: 20%;
+}
+.introduction {
+  margin-top: 5%;
+  margin-bottom: 10%;
+  margin-right: 10%;
+  margin-left: 10%;
 }
 
 </style>

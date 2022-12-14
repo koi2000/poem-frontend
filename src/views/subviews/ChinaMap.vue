@@ -2,14 +2,19 @@
 
   <body>
   <div class="main">
-    <div class="header">
-      <div class="leftcolumn">
+    <div id="mapBox">
+      <v-header :name="name" :legendArr="legendArr" :myChart="myChart"></v-header>
+      <!--    <v-filter :myChart="myChart" v-if="myChart._dom"></v-filter>-->
+      <div id="chinaMap"></div>
+    </div>
+    <div class="header2">
+      <div class="upcolumn">
         <div class="doc-title">
           <h1>地理数据</h1>
         </div>
 
       </div>
-      <div class="rightcolumn">
+      <div class="downcolumn">
         <div class="animate__animated animate__fadeIn " style="animation-duration: 3s">
           <div class="introductioncol" style="margin-top: 150px">
             <p>中国存在很多的名胜古迹，古代的诗人常常游历山川，借名胜古迹中抒发自己的情感，通过对唐宋诗词数据集中的诗词中出现的名胜古迹数量进行分析，发现<span
@@ -33,11 +38,7 @@
       </div>
 
     </div>
-    <div id="mapBox">
-      <v-header :name="name" :legendArr="legendArr" :myChart="myChart"></v-header>
-      <!--    <v-filter :myChart="myChart" v-if="myChart._dom"></v-filter>-->
-      <div id="chinaMap"></div>
-    </div>
+
 
   </div>
   </body>
@@ -222,10 +223,30 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
 .fontempa {
   color: #bd171e;
   font-weight: bold;
+}
+.header2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* border: 1em;
+  border-style:solid; */
+  justify-content: center;
+  align-items: center;
+  margin-top: -10%;
+  height: auto;
+  /* margin: auto; */
+}
+.upcolumn{
+  flex:1;
+  width: 500px;
+}
+.downcolumn{
+  flex:1
+
 }
 
 #chinaMap {

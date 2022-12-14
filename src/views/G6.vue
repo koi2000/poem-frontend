@@ -614,6 +614,48 @@ export default {
             loadData(data);
           });
 
+      graph.on('node:mouseenter', function (evt) {
+
+        const node = evt.item;
+        const model = node.getModel();
+        if (!model.neighbor) {
+        model.oriLabel = model.label;
+          graph.updateItem(node, {
+            label: `${model.count}`,
+            labelCfg: {
+              style: {
+                fill: '#000000',
+              },
+            },
+          });
+        }
+      });
+
+      graph.on('node:mouseleave', function (evt) {
+        const node = evt.item;
+        const model = node.getModel();
+        if (!model.neighbor) {
+          graph.updateItem(node, {
+            label: model.oriLabel,
+            labelCfg: {
+              style: {
+                fill: '#ffffff',
+              },
+            },
+          });
+        }
+        else{
+          graph.updateItem(node, {
+            label: model.oriLabel,
+            labelCfg: {
+              style: {
+                fill: '#697B8C',
+              },
+            },
+          });
+        }
+      });
+
 // click root to expand
       graph.on('node:click', (e) => {
         curShowNodes = [];
