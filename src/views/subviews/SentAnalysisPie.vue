@@ -56,7 +56,8 @@ import * as echarts from "../../assets/js/echarts.min.js"
 import "echarts-wordcloud/dist/echarts-wordcloud";
 import "echarts-wordcloud/dist/echarts-wordcloud.min";
 import WordCloud from "@/views/subviews/WordCloud";
-import "../../assets/css/theme.css"
+import "../../assets/css/theme.css";
+import "../../assets/css/lrtheme.css";
 export default {
   name: "EmotionPlace",
   components: {WordCloud},
@@ -619,53 +620,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
 
 
-.main2 {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100vh;
-  /*overflow-y: scroll;*/
-
-  /*flex-direction: column;*/
-  /*z-index: -999;*/
-  /*top: 0;*/
-}
-.leftcolumn2 {
-  width: 500px;
-  flex: 1;
-  /*position: relative;*/
-  /*top: -100px;*/
-
-}
-.rightcolumn2 {
-  flex:2;
-  /*position: relative;*/
-  /*top: -100px;*/
-}
-.header2 {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  /* border: 1em;
-  border-style:solid; */
-  /*justify-content: center;*/
-  /*align-items: center;*/
-  /* margin: auto; */
-}
-.doc-title {
-  margin-top: 50%;
-  margin-bottom: 0%;
-  margin-right: 20%;
-  margin-left: 20%;
-}
-.introduction {
-  margin-top: 5%;
-  margin-bottom: 10%;
-  margin-right: 10%;
-  margin-left: 10%;
-}
 
 </style>
