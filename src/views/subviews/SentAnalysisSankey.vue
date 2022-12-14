@@ -64,7 +64,8 @@ import * as echarts from "../../assets/js/echarts.min.js"
 import "echarts-wordcloud/dist/echarts-wordcloud";
 import "echarts-wordcloud/dist/echarts-wordcloud.min";
 import WordCloud from "@/views/subviews/WordCloud";
-import "../../assets/css/theme.css"
+import "../../assets/css/theme.css";
+import "../../assets/css/lrtheme.css";
 export default {
   name: "SentAnalysisSankey",
   components: {WordCloud},
@@ -390,18 +391,7 @@ export default {
 }
 </script>
 
-<style scoped>
-
-.fontempa{
-  color: #bd171e;
-  font-weight: bold;
-}
-.main2 {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100vh;
-  /*overflow-y: scroll;*/
+<style >
 
   /*flex-direction: column;*/
   /*z-index: -999;*/
