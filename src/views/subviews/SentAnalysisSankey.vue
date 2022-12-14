@@ -423,6 +423,7 @@ export default {
   flex: 1;
   display: flex;
   flex-direction: column;
+  margin-top: -100px;
   /* border: 1em;
   border-style:solid; */
   /*justify-content: center;*/

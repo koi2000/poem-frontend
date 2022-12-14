@@ -19,6 +19,9 @@ Vue.prototype.$tableau = Tableau
 // 全屏滚动 vue-fullpage.js
 import 'fullpage.js/vendors/scrolloverflow';
 import VueFullpage from 'vue-fullpage.js'
+import { VuePlugin } from "vuera";
+Vue.use(VuePlugin);
+
 Vue.use(VueFullpage)
 Vue.use(Vuex)
 

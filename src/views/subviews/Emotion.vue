@@ -260,11 +260,13 @@ h2 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: start;
 }
 
 #d3Chart {
-
+  /*margin-top: 0px;*/
+  /*width: 50%;*/
+  /*height: 30%;*/
 }
 
 h1 {
@@ -294,7 +296,7 @@ h1 {
   border-style:solid; */
   justify-content: center;
   align-items: center;
-  margin-top: -10%;
+  margin-top: 10%;
   height: auto;
   /* margin: auto; */
 }

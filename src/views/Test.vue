@@ -3,31 +3,38 @@
     <!--    <iframe src="../assets/html/aaaa.html" id="qt"></iframe>-->
     <full-page :options="options" ref="fullpage">
       <div class="section" :key="0">
+
+        <div class="slide">
+          <iframe src="static/html/animated/index.html" width="100%" height="100%" frameborder="0"
+                  scrolling="auto"></iframe>
+        </div>
+
         <div class="slide">
           <ChinaMap/>
         </div>
 
         <div class="slide">
           <div>
-            <SentAnalysisSankey v-if="this.index===1"/>
+            <SentAnalysisSankey v-if="this.index===2"/>
           </div>
         </div>
 
         <div class="slide">
           <div>
-            <SentAnalysisPie v-if="this.index===2"/>
+            <SentAnalysisPie v-if="this.index===3"/>
           </div>
         </div>
 
         <div class="slide">
           <div>
-            <G6 v-if="this.index===3"/>
+            <G6 v-if="this.index===4"/>
           </div>
         </div>
 
         <div class="slide">
-          <iframe src="static/html/visual/sun.html" width="100%" height="100%" frameborder="0"
-                  scrolling="auto"></iframe>
+          <!--          <iframe src="static/html/visual/sun.html" width="100%" height="100%" frameborder="0"-->
+          <!--                  scrolling="auto"></iframe>-->
+          <Sun/>
         </div>
 
         <div class="slide">
@@ -35,7 +42,22 @@
         </div>
 
         <div class="slide">
-          <D3Cloud/>
+          <!--          <div ref="react"></div>-->
+          <!--          <Three/>-->
+<!--          <react :component="component" :message="message"/>-->
+          <div style="font-family: 'kxfont';">
+            <iframe src="http://localhost:3000" width="100%" height="800px" frameborder="0"
+                    scrolling="auto"></iframe>
+          </div>
+
+<!--          <Three/>-->
+<!--          <my-react-component :message="message" @onMyEvent="parentClickHandle"/>-->
+          <div>
+<!--            <my-react-component :message="message" @onMyEvent="parentClickHandle"/>-->
+<!--            <my-react-component :message="message" />-->
+<!--            <react :component="component" :message="message" />-->
+          </div>
+
         </div>
 
         <div class="slide">
@@ -116,12 +138,35 @@ import SentAnalysisPie from "@/views/subviews/SentAnalysisPie";
 import Emotion from "@/views/subviews/Emotion";
 import G6 from "@/views/G6";
 import WordCloud from "@/views/subviews/WordCloud";
+import Sun from "@/views/subviews/Sun";
 import D3Cloud from "@/views/D3Cloud";
+import Three from '../components/Three'
+import ReactDOM from 'react-dom'
+import React from 'react'
+import reactTest from './react_test'
+import { ReactInVue } from 'vuera'
 
 export default {
-  components: {WordCloud, G6, Emotion, ChinaMap, EmotionPlace, SentAnalysisSankey, SentAnalysisPie,D3Cloud},
+  components: {
+    'my-react-component': ReactInVue(Three),
+    // components: { react: ReactWrapper },
+    // 'my-react-component': MyReactComponent,
+    WordCloud,
+    G6,
+    Emotion,
+    ChinaMap,
+    EmotionPlace,
+    SentAnalysisSankey,
+    SentAnalysisPie,
+    D3Cloud,
+    Sun,
+    // Three
+  },
   data() {
     return {
+      // component: MyReactComponent,
+      // component: Three,
+      message: 'Hello from React!',
       src: "../../public/static/html/aaaa.html",
       index: 0,
       options: {
@@ -147,6 +192,9 @@ export default {
     }
   },
   methods: {
+    parentClickHandle(data){
+      console.log(data);
+    },
     next() {
       // 向下滚动一页
       this.$refs.fullpage.api.moveSectionDown();
@@ -162,7 +210,10 @@ export default {
     afterSlideLoad(anchorLink, index, slideIndex, direction, nextSlideIndex) {
       console.log(slideIndex.index)
       this.index = slideIndex.index
-    }
+    },
+  },
+  mounted() {
+    // ReactDOM.render(React.createElement(ReactTest), this.$refs.react)
   }
 }
 </script>

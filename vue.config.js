@@ -1,4 +1,6 @@
 module.exports = {
+  // requireModuleExtension: true,
+  // test: /\.(js|jsx|tsx)(\?.*)?$/,
   devServer:{
     proxy:{
       "/poem":{
@@ -22,6 +24,9 @@ module.exports = {
   publicPath: "/poem-frontend/",
   configureWebpack: {
     devtool: 'source-map',
+    // test: /\.(js|jsx)(\?.*)?$/,
+    // loader:"babel-loader",
+    // include: [resolve('src'), resolve('test'), resolve('node modules/webpack-dev-server/client')]
   }
 }
 
