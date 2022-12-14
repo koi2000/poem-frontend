@@ -36,10 +36,7 @@
       </div>
 
       <div class="leftcolumn2" style="margin:auto">
-        <div class="animate__animated animate__fadeIn " style="animation-duration: 1s">
-
         <div id="6dfb6e046ebb4dc3aacd6de256b615bd" class="chart-container" style="width:100%; height:800px;"></div>
-        </div>
       </div>
 
       <!--      <div class="header" style="margin:auto">-->
