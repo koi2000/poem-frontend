@@ -4,65 +4,67 @@
     <full-page :options="options" ref="fullpage">
       <div class="section" :key="0">
 
-        <div class="slide" id="slide1">
+        <div class="slide" id="slide0">
           <iframe src="static/html/animated/index.html" width="100%" height="100%" frameborder="0"
                   scrolling="auto"></iframe>
         </div>
 
-        <div class="slide" id="slide2">
-          <iframe src="static/html/timeriver/themeriver-scatter.html" width="100%" height="100%" frameborder="0"
-                  scrolling="auto"></iframe>
+        <div class="slide" id="slide1">
+<!--          <iframe src="static/html/timeriver/themeriver-scatter.html" width="100%" height="100%" frameborder="0"-->
+<!--                  scrolling="auto"></iframe>-->
+          <div>
+            <TimeRiver v-if="this.index===1"/>
+          </div>
         </div>
 
-        <div class="slide">
+        <div class="slide" id="slide2">
           <div>
             <ChinaMap v-if="this.index===2"/>
           </div>
-
         </div>
 
-        <div class="slide">
+        <div class="slide" id="slide3">
           <div>
             <SentAnalysisSankey v-if="this.index===3"/>
           </div>
         </div>
 
-        <div class="slide">
+        <div class="slide" id="slide4">
           <div>
             <SentAnalysisPie v-if="this.index===4"/>
           </div>
         </div>
 
-        <div class="slide">
+        <div class="slide" id="slide5">
           <div>
             <G6 v-if="this.index===5"/>
           </div>
         </div>
 
-        <div class="slide">
+        <div class="slide" id="slide6">
           <!--          <iframe src="static/html/visual/sun.html" width="100%" height="100%" frameborder="0"-->
           <!--                  scrolling="auto"></iframe>-->
           <Sun/>
         </div>
 
-        <div class="slide">
+        <div class="slide" id="slide7">
           <Emotion/>
         </div>
 
-        <div class="slide">
+        <div class="slide" id="slide8">
           <!--          <div ref="react"></div>-->
           <!--          <Three/>-->
           <!--          <react :component="component" :message="message"/>-->
           <h1>诗词类型词云图</h1>
           <div style="font-family: 'kxfont';">
 
+<!--            <iframe src="https://koi2000.top/" width="100%" height="800px" style="margin-top: -100px" frameborder="0"-->
+<!--                    scrolling="auto"></iframe>-->
             <iframe src="https://koi2000.top/" width="100%" height="800px" style="margin-top: -100px" frameborder="0"
                     scrolling="auto"></iframe>
           </div>
-
           <!--          <Three/>-->
           <!--          <my-react-component :message="message" @onMyEvent="parentClickHandle"/>-->
-
         </div>
 
         <div class="slide">
@@ -147,9 +149,11 @@ import Sun from "@/views/subviews/Sun";
 import D3Cloud from "@/views/D3Cloud";
 import React from 'react'
 import HomePage from "@/views/HomePage";
+import TimeRiver from "@/views/subviews/TimeRiver";
 
 export default {
   components: {
+    TimeRiver,
     HomePage,
     WordCloud,
     G6,
@@ -172,11 +176,12 @@ export default {
         afterLoad: this.afterLoad,
         onLeave: this.onLeave,
         afterSlideLoad: this.afterSlideLoad,
-        css3: false,//需要把这个值设置为false
-        easing: 'easeInOutCubic',//之后你就可以随意选择easing.js里面的动画效果名称了
+        onSlideLeave: this.onSlideLeave,
+        css3: false, //需要把这个值设置为false
+        easing: 'easeInOutCubic', //之后你就可以随意选择easing.js里面的动画效果名称了
         // fadingEffect:true,
         // fadingEffect:'slides'
-        //为每个section设置背景色
+        // 为每个section设置背景色
         // sectionsColor: [
         //   "#41b883",
         //   "#ff5f45",
@@ -204,22 +209,63 @@ export default {
       // this.index = index.index
     },
     onLeave(index, aindex, direction) {
-      console.log(aindex.index)
-      this.index = aindex.index
-      if(index.index===0){
-        $('#slide1').addClass('animated fadeInDown');
-      }
-
+      // this.index = aindex.index
+      // if (index.index === 0) {
+      //   $('#slide1').addClass('animated fadeInDown');
+      // }
     },
     afterSlideLoad(anchorLink, index, slideIndex, direction, nextSlideIndex) {
-      console.log(slideIndex.index)
       this.index = slideIndex.index
+      if (slideIndex.index === 0) {
+        // 向ID为P1的元素添加class，animated是animate.css激活动画必须加的class,后面跟的是动画class
+        console.log("创建" + index.index);
+        $('#slide0').addClass('animated zoomIn');
+      }
+      if (slideIndex.index === 1) {
+        console.log("创建" + index.index);
+        $('#slide1').addClass('animated zoomIn');
+      }
 
+      if (slideIndex.index === 2) {
+        console.log("创建" + index.index);
+        $('#slide2').addClass('animated zoomIn');
+      }
+      if (slideIndex.index === 3) {
+        console.log("创建" + index.index);
+        $('#slide3').addClass('animated zoomIn');
+      }
+      if (slideIndex.index === 4) {
+        console.log("创建" + index.index);
+        $('#slide4').addClass('animated zoomIn');
+      }
     },
+    onSlideLeave(anchorLink, index, slideIndex, direction, nextSlideIndex) {
+      if (slideIndex.index === 0) {
+        // 向ID为P1的元素添加class，animated是animate.css激活动画必须加的class,后面跟的是动画class
+        console.log("创建" + index.index);
+        $('#slide0').removeClass('animated zoomIn');
+      }
+      if (slideIndex.index === 1) {
+        console.log("创建" + index.index);
+        $('#slide1').removeClass('animated zoomIn');
+      }
+      if (slideIndex.index === 2) {
+        console.log("创建" + index.index);
+        $('#slide2').removeClass('animated zoomIn');
+      }
+      if (slideIndex.index === 3) {
+        console.log("创建" + index.index);
+        $('#slide3').removeClass('animated zoomIn');
+      }
+      if (slideIndex.index === 4) {
+        console.log("创建" + index.index);
+        $('#slide4').removeClass('animated zoomIn');
+      }
+    }
   },
 }
 </script>
 
 <style scoped>
-/*@import "../assets/css/theme.css";*/
+@import "../assets/css/animate.min.css";
 </style>

@@ -8,40 +8,85 @@
   <!--    </div>-->
 
 
-  <body>
-  <div class="main">
-    <div class="header">
-      <div class="leftcolumn">
-        <div class="doc-title">
-          <h1 style="font-family: 'kxfont';font-size: 60px;">唐诗宋词中颜色季节与情绪词的相似度桑基图</h1>
+  <div>
+    <div class="main2">
+
+      <div class="header2">
+        <div class="leftcolumn2">
+          <div class="animate__animated animate__fadeInDown">
+            <div class="doc-title" >
+              <h1 style="font-family: 'kxfont';font-size: 60px;">颜色季节情绪相似度桑基图</h1>
+            </div>
+          </div>
+
         </div>
-      </div>
-
-      <!--      <div class="leftcolumn">-->
-      <!--        <div class="doc-title">-->
-      <!--          <h1>地理数据</h1>-->
-      <!--        </div>-->
-      <!--      </div>-->
-
-      <div class="rightcolumn">
-        <div class="animate__animated animate__fadeIn " style="animation-duration: 3s">
-          <div class="introductioncol">
-            <p>根据余弦相似度，对结果进行了差异放大后，将唐诗宋词中颜色，季节与情绪词的相似度绘制如下。</p>
-            <p>将鼠标悬浮于某节点处，可以高亮与其相关的词项的图形。
-            <p>
-            <p>将鼠标悬浮于某一连线上，停止半秒即可高亮该连线和两节点并显示相似度值。</p>
-
+        <div class="rightcolumn2">
+          <div class="animate__animated animate__fadeIn " style="animation-duration: 3s">
+            <div class="introductioncol">
+              <p>根据余弦相似度，对结果进行了差异放大后，将唐诗宋词中颜色，季节与情绪词的相似度绘制如下。</p>
+              <p>将鼠标悬浮于某节点处，可以高亮与其相关的词项的图形。
+              <p>
+              <p>将鼠标悬浮于某一连线上，停止半秒即可高亮该连线和两节点并显示相似度值。</p>
+            </div>
           </div>
         </div>
+
       </div>
 
-    </div>
-    <div id="chartBox">
-      <div id="d3Chart"></div>
-    </div>
 
+      <div class="leftcolumn2" style="margin:auto">
+        <div class="animate__animated animate__fadeIn " style="animation-duration: 3s">
+
+          <div id="d3Chart"></div>
+<!--          <div id="chartBox">-->
+<!--            -->
+<!--          </div>-->
+<!--          <div id="a00862844d68469685e0d9aaea4ed7d0" class="chart-container" style="width:100%; height:800px;"></div>-->
+        </div>
+      </div>
+      <!--      <div class="header" style="margin:auto">-->
+      <!--        <div id="5d4cf58ea685498a91237dceaee927c5" ref="wordcloud" class="chart-container" style="width:900px; height:500px;"></div>-->
+      <!--      </div>-->
+      <!--      <div ref="wordcloud" class="wordcloud"></div>-->
+
+    </div>
   </div>
-  </body>
+
+
+<!--  <body>-->
+<!--  <div class="main">-->
+<!--    <div class="header">-->
+<!--      <div class="leftcolumn">-->
+<!--        <div class="doc-title">-->
+<!--          <h1 style="font-family: 'kxfont';font-size: 60px;">唐诗宋词中颜色季节与情绪词的相似度桑基图</h1>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash;      <div class="leftcolumn">&ndash;&gt;-->
+<!--      &lt;!&ndash;        <div class="doc-title">&ndash;&gt;-->
+<!--      &lt;!&ndash;          <h1>地理数据</h1>&ndash;&gt;-->
+<!--      &lt;!&ndash;        </div>&ndash;&gt;-->
+<!--      &lt;!&ndash;      </div>&ndash;&gt;-->
+
+<!--      <div class="rightcolumn">-->
+<!--        <div class="animate__animated animate__fadeIn " style="animation-duration: 3s">-->
+<!--          <div class="introductioncol">-->
+<!--            <p>根据余弦相似度，对结果进行了差异放大后，将唐诗宋词中颜色，季节与情绪词的相似度绘制如下。</p>-->
+<!--            <p>将鼠标悬浮于某节点处，可以高亮与其相关的词项的图形。-->
+<!--            <p>-->
+<!--            <p>将鼠标悬浮于某一连线上，停止半秒即可高亮该连线和两节点并显示相似度值。</p>-->
+
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--    </div>-->
+<!--    <div id="chartBox">-->
+<!--      <div id="d3Chart"></div>-->
+<!--    </div>-->
+
+<!--  </div>-->
+<!--  </body>-->
 
 
   <!--    <div id="title"><b>唐诗宋词中颜色，季节与情绪词的相似度桑基图</b> &nbsp</div>-->

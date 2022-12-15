@@ -151,15 +151,17 @@ export default {
                 show: true,
                 min: 0,
                 max: 1030,
-                left: 130,
+                left: 100,
                 bottom: 50,
                 splitNumber: 5,
                 seriesIndex: 0,
                 zlevel: 2,
                 hoverLink: true,
                 // text:['名胜古迹'],
+                // borderColor:"#394e5d",                         //边框颜色
+                // borderWidth:1,
                 inRange: {
-                  color: ['#72b9b2', '#2A7484', '#255B78']
+                  color: ['#76a89f', '#366d75', '#175675']
                 },
                 textStyle: {
                   color: '#213d3d'
@@ -178,7 +180,7 @@ export default {
                   {max: 600}
                 ],
                 hoverLink: true,
-                left: 0,
+                left: -10,
                 bottom: 50,
                 splitNumber: 10,
                 zlevel: 0,
@@ -188,7 +190,7 @@ export default {
                 // text:['诗人数量'],
                 inRange: {
                   // color: ['#72b9b2', '#2A7484', '#255B78']
-                  color: ['rgba(108,100,73,0.57)','rgba(52,41,1,0.7)']
+                  color: ['#a89496','#50141a']
                 },
                 textStyle: {
                   color: '#213d3d'
@@ -204,11 +206,12 @@ export default {
               },
               zoom: 1,
               top: 50,
+              left:110,
               itemStyle: {
                 normal: {
                   color: '#c0bbb6',
                   opacity: 0.6,
-                  borderColor: 'rgba(255,255,255,0.15)'
+                  borderColor: 'rgba(3,3,3,0.15)'
                 },
                 emphasis: {
                   color: '#d5d1c7'
@@ -235,10 +238,18 @@ export default {
                   }
                 },
                 itemStyle: {
-                  emphasis: {
-                    borderColor: '#fff',
-                    borderWidth: 1
-                  }
+                  normal:{
+                    borderColor: '#ffffff',
+                    borderWidth: 1,
+                  },
+                  // emphasis: {
+                  //   borderColor: '#030303',
+                  //   borderWidth: 1
+                  // }
+                  // emphasis: {
+                  //   borderColor: '#fff',
+                  //   borderWidth: 1
+                  // }
                 },
                 data: this.convertData(this.placeData)
                 // data: res.data
@@ -261,14 +272,17 @@ export default {
                 },
                 itemStyle: {
                   color: '#ff0000',
-                  emphasis: {
-                    borderColor: '#fff',
-                    borderWidth: 1
-                  }
+                  normal:{
+                    borderColor: '#ffffff',
+                    borderWidth: 1,
+                  },
+                  // emphasis: {
+                  //   borderColor: '#030303',
+                  //   borderWidth: 1
+                  // }
                 },
                 data: this.convertData(this.authorData)
               },
-
             ]
           }
           this.init(options)
@@ -280,7 +294,7 @@ export default {
 </script>
 
 <style>
-@import "../../assets/css/lrtheme.css";
+/*@import "../../assets/css/lrtheme.css";*/
 
 .fontempa {
   color: #bd171e;
@@ -290,7 +304,7 @@ export default {
 .mapchart {
   flex: 1;
   align-items: center;
-  margin-left: 10%;
+  /*margin-left: 10%;*/
 }
 
 .header2 {
@@ -317,8 +331,8 @@ export default {
 }
 
 #chinaMap {
-  width: 930px;
-  height: 400px;
+  width: 600px;
+  height: 450px;
 }
 
 #mapBox {
@@ -338,5 +352,42 @@ export default {
   height: 100vh;
   overflow-y: scroll;
 }
+
+.main2 {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+  /*justify-content: center;*/
+  align-items: center;
+  /*overflow-y: scroll;*/
+
+  /*flex-direction: column;*/
+  /*z-index: -999;*/
+  /*top: 0;*/
+}
+.header2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* border: 1em;
+  border-style:solid; */
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  /* margin: auto; */
+}
+.doc-title {
+  margin-top: 50%;
+  margin-bottom: 0%;
+  margin-right: 20%;
+  margin-left: 20%;
+}
+.introduction {
+  margin-top: 5%;
+  margin-bottom: 10%;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
 
 </style>
