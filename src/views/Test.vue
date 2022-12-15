@@ -4,18 +4,21 @@
     <full-page :options="options" ref="fullpage">
       <div class="section" :key="0">
 
-        <div class="slide">
+        <div class="slide" id="slide1">
           <iframe src="static/html/animated/index.html" width="100%" height="100%" frameborder="0"
                   scrolling="auto"></iframe>
         </div>
 
-        <div class="slide">
+        <div class="slide" id="slide2">
           <iframe src="static/html/timeriver/themeriver-scatter.html" width="100%" height="100%" frameborder="0"
                   scrolling="auto"></iframe>
         </div>
 
         <div class="slide">
-          <ChinaMap/>
+          <div>
+            <ChinaMap v-if="this.index===2"/>
+          </div>
+
         </div>
 
         <div class="slide">
@@ -169,6 +172,10 @@ export default {
         afterLoad: this.afterLoad,
         onLeave: this.onLeave,
         afterSlideLoad: this.afterSlideLoad,
+        css3: false,//需要把这个值设置为false
+        easing: 'easeInOutCubic',//之后你就可以随意选择easing.js里面的动画效果名称了
+        // fadingEffect:true,
+        // fadingEffect:'slides'
         //为每个section设置背景色
         // sectionsColor: [
         //   "#41b883",
@@ -199,10 +206,15 @@ export default {
     onLeave(index, aindex, direction) {
       console.log(aindex.index)
       this.index = aindex.index
+      if(index.index===0){
+        $('#slide1').addClass('animated fadeInDown');
+      }
+
     },
     afterSlideLoad(anchorLink, index, slideIndex, direction, nextSlideIndex) {
       console.log(slideIndex.index)
       this.index = slideIndex.index
+
     },
   },
 }
