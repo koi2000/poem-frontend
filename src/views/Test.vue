@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="animate__animated animate__fadeIn" style="animation-duration: 3s">
     <!--    <iframe src="../assets/html/aaaa.html" id="qt"></iframe>-->
     <full-page :options="options" ref="fullpage">
       <div class="section" :key="0">
@@ -9,44 +9,12 @@
                   scrolling="auto"></iframe>
         </div>
 
-        <div class="slide" id="slide1">
-          <div class="animate__animated animate__fadeIn" style="animation-duration: 3s">
-            <TimeRiver v-if="this.index===1"/>
-          </div>
-<!--          <TimeRiver v-if="this.index===1"/>-->
-        </div>
-
-        <div class="slide" id="slide2">
-          <div>
-            <ChinaMap v-if="this.index===2"/>
-          </div>
-        </div>
-
-        <div class="slide" id="slide3">
-          <div>
-            <SentAnalysisSankey v-if="this.index===3"/>
-          </div>
-        </div>
-
-        <div class="slide" id="slide4">
-          <div>
-            <SentAnalysisPie v-if="this.index===4"/>
-          </div>
-        </div>
-
         <div class="slide" id="slide5">
           <div>
-            <G6 v-if="this.index===5"/>
+            <G6 v-if="this.index===1"/>
           </div>
         </div>
 
-        <div class="slide" id="slide6">
-          <Sun/>
-        </div>
-
-        <div class="slide" id="slide7">
-          <Emotion/>
-        </div>
 
         <div class="slide" id="slide8">
           <h1>边塞诗词云图</h1>
@@ -56,15 +24,55 @@
           </div>
         </div>
 
-        <div class="slide">
-          <iframe src="static/html/visualization-master/cn.html" width="100%" height="100%" frameborder="0"
-                  scrolling="auto"></iframe>
+
+        <div class="slide" id="slide1">
+          <div class="animate__animated animate__fadeIn" style="animation-duration: 3s">
+            <TimeRiver v-if="this.index===3"/>
+          </div>
+          <!--          <TimeRiver v-if="this.index===1"/>-->
         </div>
 
-        <div class="slide">
-          <iframe src="static/html/visualization-master/ka.html" width="100%" height="100%" frameborder="0"
-                  scrolling="auto"></iframe>
+        <div class="slide" id="slide2">
+          <div>
+            <ChinaMap v-if="this.index===4"/>
+          </div>
         </div>
+
+
+        <div class="slide" id="slide3">
+          <div>
+            <SentAnalysisSankey v-if="this.index===5"/>
+          </div>
+        </div>
+
+        <div class="slide" id="slide7">
+          <div>
+            <Emotion v-if="this.index===6"/>
+          </div>
+        </div>
+
+        <div class="slide" id="slide4">
+          <div>
+            <SentAnalysisPie v-if="this.index===7"/>
+          </div>
+        </div>
+
+        <div class="slide" id="slide6">
+          <div>
+            <Sun v-if="this.index===8"/>
+          </div>
+        </div>
+
+
+        <!--        <div class="slide">-->
+        <!--          <iframe src="static/html/visualization-master/cn.html" width="100%" height="100%" frameborder="0"-->
+        <!--                  scrolling="auto"></iframe>-->
+        <!--        </div>-->
+
+        <!--        <div class="slide">-->
+        <!--          <iframe src="static/html/visualization-master/ka.html" width="100%" height="100%" frameborder="0"-->
+        <!--                  scrolling="auto"></iframe>-->
+        <!--        </div>-->
 
       </div>
       <!--      <div class="section" :key="0">-->

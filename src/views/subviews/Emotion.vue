@@ -8,7 +8,7 @@
   <!--    </div>-->
 
 
-  <div>
+  <div class="animate__animated animate__fadeIn" style="animation-duration: 3s">
     <div class="main2">
 
       <div class="header2">

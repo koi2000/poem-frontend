@@ -1,6 +1,6 @@
 <template>
 
-  <body>
+  <body class="animate__animated animate__fadeIn" style="animation-duration: 3s">
   <div class="main">
     <div class="header">
       <div class="rightcolumn">
