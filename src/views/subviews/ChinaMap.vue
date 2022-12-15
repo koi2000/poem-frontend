@@ -129,6 +129,9 @@ export default {
         axios.get("static/data/place/provinceAuthor.json").then((res) => {
           this.authorData = res.data
           let options = {
+            textStyle: {
+              fontFamily: 'kxfont'
+            },
             // backgroundColor: '#404a59',
             title: {
               show: false
@@ -149,7 +152,7 @@ export default {
               bottom: 50,
               splitNumber: 10,
               inRange: {
-                color: ['#255B78', '#2A7484', '#2F9696', '#3BBCB0', '#51D4EB']
+                color: ['#72b9b2','#2A7484','#255B78']
               },
               textStyle: {
                 color: '#213d3d'
@@ -166,12 +169,12 @@ export default {
               top: 50,
               itemStyle: {
                 normal: {
-                  color: '#3c4247',
+                  color: '#c0bbb6',
                   opacity: 0.6,
-                  borderColor: 'rgba(255, 255, 255, 0.35)'
+                  borderColor: 'rgba(255,255,255,0.15)'
                 },
                 emphasis: {
-                  color: '#2a333d'
+                  color: '#d5d1c7'
                 }
               }
             },
