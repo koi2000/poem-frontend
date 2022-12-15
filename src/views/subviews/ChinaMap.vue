@@ -1,7 +1,7 @@
 <template>
   <div class="animate__animated animate__fadeIn " style="animation-duration: 3s">
   <body>
-  <div class="main">
+  <div class="main2">
     <div class="mapchart">
 
       <div id="mapBox">
@@ -234,6 +234,7 @@ export default {
 </script>
 
 <style >
+@import "../../assets/css/lrtheme.css";
 .fontempa {
   color: #bd171e;
   font-weight: bold;
@@ -267,14 +268,6 @@ export default {
 #chinaMap {
   width: 630px;
   height: 400px;
-  /*justify-content: center;*/
-  /*align-items: center;*/
-
-  /*position: absolute;*/
-  /*left: 500px;*/
-  /*flex: 3;*/
-  /*display: flex;*/
-  /*flex-direction: column;*/
 }
 
 #mapBox {
@@ -293,9 +286,6 @@ export default {
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
-  /*flex-direction: column;*/
-  /*z-index: -999;*/
-  /*top: 0;*/
 }
 
 </style>

@@ -9,10 +9,10 @@
                   scrolling="auto"></iframe>
         </div>
 
-<!--        <div class="slide">-->
-<!--          <iframe src="static/html/timeriver/themeriver-scatter.html" width="100%" height="100%" frameborder="0"-->
-<!--                  scrolling="auto"></iframe>-->
-<!--        </div>-->
+        <div class="slide">
+          <iframe src="static/html/timeriver/themeriver-scatter.html" width="100%" height="100%" frameborder="0"
+                  scrolling="auto"></iframe>
+        </div>
 
         <div class="slide">
           <ChinaMap/>
@@ -20,19 +20,19 @@
 
         <div class="slide">
           <div>
-            <SentAnalysisSankey v-if="this.index===2"/>
+            <SentAnalysisSankey v-if="this.index===3"/>
           </div>
         </div>
 
         <div class="slide">
           <div>
-            <SentAnalysisPie v-if="this.index===3"/>
+            <SentAnalysisPie v-if="this.index===4"/>
           </div>
         </div>
 
         <div class="slide">
           <div>
-            <G6 v-if="this.index===4"/>
+            <G6 v-if="this.index===5"/>
           </div>
         </div>
 
@@ -142,19 +142,12 @@ import G6 from "@/views/G6";
 import WordCloud from "@/views/subviews/WordCloud";
 import Sun from "@/views/subviews/Sun";
 import D3Cloud from "@/views/D3Cloud";
-import Three from '../components/Three'
-import ReactDOM from 'react-dom'
 import React from 'react'
-import reactTest from './react_test'
-import {ReactInVue} from 'vuera'
 import HomePage from "@/views/HomePage";
 
 export default {
   components: {
     HomePage,
-    'my-react-component': ReactInVue(Three),
-    // components: { react: ReactWrapper },
-    // 'my-react-component': MyReactComponent,
     WordCloud,
     G6,
     Emotion,
@@ -168,10 +161,6 @@ export default {
   },
   data() {
     return {
-      // component: MyReactComponent,
-      // component: Three,
-      message: 'Hello from React!',
-      src: "../../public/static/html/aaaa.html",
       index: 0,
       options: {
         licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
@@ -216,9 +205,6 @@ export default {
       this.index = slideIndex.index
     },
   },
-  mounted() {
-    // ReactDOM.render(React.createElement(ReactTest), this.$refs.react)
-  }
 }
 </script>
 

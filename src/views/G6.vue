@@ -1,14 +1,14 @@
 <template>
-  <div class="page-x" >
+  <div class="page-x">
     <!-- 【步骤1】 创建容器 -->
-<!--    <div class="g6-x" id="containerG6" ref="containerG6"></div>-->
-    <div class="main">
-<div class="leftcolumn">
-  <div class="animate__animated animate__fadeIn" style="animation-duration: 3s">
-  <div  id="container"  style="height: 98vh; border:5px solid #ffffff;margin-left: 1% ;margin-right: 1% "/>
-  </div>
-</div>
-      <div class="rightcolumn">
+    <!--    <div class="g6-x" id="containerG6" ref="containerG6"></div>-->
+    <div class="main2">
+      <div class="leftcolumn2">
+        <div class="animate__animated animate__fadeIn" style="animation-duration: 3s">
+          <div id="container" style="height: 98vh; border:5px solid #ffffff;margin-left: 1% ;margin-right: 1% "/>
+        </div>
+      </div>
+      <div class="rightcolumn2">
 
 
         <div class="introduction">
@@ -22,7 +22,6 @@
 
             </p>
           </div>
-
 
 
         </div>
@@ -50,6 +49,7 @@
   /*z-index: -999;*/
   /*top: 0;*/
 }
+
 /* Left column */
 .leftcolumn {
   flex: 1.6;
@@ -73,6 +73,7 @@
 import G6 from '@antv/g6'
 import {mix} from '@antv/util';
 import 'animate.css';
+
 export default {
   name: "G6",
   data() {
@@ -489,8 +490,8 @@ export default {
             style: {
               fill: 'white',
               fontStyle: 'bold',
-              fontFamily:'kxfont',
-              fontSize:30
+              fontFamily: 'kxfont',
+              fontSize: 30
             },
           },
         },
@@ -564,7 +565,7 @@ export default {
             node.style = {
               fill: Colors[node.type],
               lineWidth: 0,
-              fontFamily:'kxfont'
+              fontFamily: 'kxfont'
             };
             let labelColor = '#fff';
             if (node.type === 'adj') {
@@ -575,7 +576,7 @@ export default {
                 fontSize: 30,
                 fill: labelColor,
                 // fontWeight: 300,
-                fontFamily:'kxfont'
+                fontFamily: 'kxfont'
               },
             };
             node.x = Math.random() * 800;
@@ -620,7 +621,7 @@ export default {
         const node = evt.item;
         const model = node.getModel();
         if (!model.neighbor) {
-        model.oriLabel = model.label;
+          model.oriLabel = model.label;
           graph.updateItem(node, {
             label: `${model.count}`,
             labelCfg: {
@@ -644,8 +645,7 @@ export default {
               },
             },
           });
-        }
-        else{
+        } else {
           graph.updateItem(node, {
             label: model.oriLabel,
             labelCfg: {
@@ -760,7 +760,7 @@ export default {
                     fontSize: 13,
                     lineHeight: 19,
                     fill: '#697B8C',
-                    fontFamily:'kxfont'
+                    fontFamily: 'kxfont'
                   },
                   position: 'center',
                 };
@@ -850,6 +850,7 @@ export default {
 </script>
 
 <style scoped>
+@import "../assets/css/lrtheme.css";
 .g6-x {
   width: 800px;
   height: 500px;

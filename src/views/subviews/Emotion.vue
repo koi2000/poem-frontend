@@ -25,7 +25,7 @@
 
       <div class="rightcolumn">
         <div class="animate__animated animate__fadeIn " style="animation-duration: 3s">
-          <div class="introductioncol" style="margin-top: 150px">
+          <div class="introductioncol">
             <p>根据余弦相似度，对结果进行了差异放大后，将唐诗宋词中颜色，季节与情绪词的相似度绘制如下。</p>
             <p>将鼠标悬浮于某节点处，可以高亮与其相关的词项的图形。
             <p>
@@ -256,6 +256,15 @@ h2 {
   font-weight: bold;
 }
 
+.leftcolumn {
+  flex: 1;
+}
+
+.rightcolumn {
+  flex: 1;
+  margin-top: auto;
+}
+
 #chartBox {
   display: flex;
   flex-direction: row;
@@ -283,22 +292,16 @@ h1 {
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
-  /*flex-direction: column;*/
-  /*z-index: -999;*/
-  /*top: 0;*/
 }
 
 .header {
   flex: 1;
   display: flex;
   flex-direction: row;
-  /* border: 1em;
-  border-style:solid; */
   justify-content: center;
   align-items: center;
-  margin-top: 10%;
+  margin-top: -500px;
   height: auto;
-  /* margin: auto; */
 }
 
 
