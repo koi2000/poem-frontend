@@ -1,19 +1,26 @@
 <template>
+
   <body>
   <div class="main">
     <div class="header">
-      <div class="leftcolumn">
+      <div class="rightcolumn">
         <div class="doc-title">
-          <h1>文案没想好</h1>
+          <h1>诗人<span class="fontempa">|</span>诗歌数量与时间的关系</h1>
         </div>
       </div>
-      <div class="rightcolumn">
+      <div class="leftcolumn">
         <div class="introduction">
           <p>
-            《从百草园到三味书屋》是鲁迅于1926年写的一篇童年妙趣生活的回忆性散文，
-            此文被收入《朝花夕拾》。全文描述了色调不同，情韵各异的两大景片：百草园和三味书屋。作者写百草园，以“乐”为中心，以简约生动的文字，
-            描绘了一个奇趣无穷的儿童乐园，其间穿插“美女蛇”的传说和冬天雪地捕鸟的故事，动静结合，详略得当，趣味无穷。三味书屋则是一个完全不同的世界，作者逼真地写出了三味书屋的陈腐味，说
-<!--            它是“全城中称为最严厉的书塾”，儿童在那里受到规矩的束缚。但作者并未将三味书屋写得死气沉沉，而是通过课间学生溜到后园嬉耍，老私塾先生在课堂上入神读书学生乘机偷乐两个小故事的叙述，使三味书屋充满了谐趣，表现了儿童不可压抑的快乐天性。该散文入选2018年版初中语文，人民教育出版社七年级（上册）。-->
+            江山代有才人出，各领风骚数百年。纵观历史，诗词是我国文化历史上最灿烂宝贵的珍宝，而且因为朝代的迁移，有着众多特点及风格，
+
+            <span class="fontempa">周朝</span>的诗词四言、杂言居多，语言质朴，内容生活化。<span class="fontempa">秦汉三国</span>出现五言、七言，辞藻华丽，语言含蓄。
+            <span class="fontempa">魏晋南北朝</span>后田园诗出现，语言质朴，杂言诗辞藻华丽。
+            <span class="fontempa">隋唐</span>的诗歌基本发展完全，出现绝句、律诗，此时诗人数量以及诗词数量达到了一个新高度。
+            到<span class="fontempa">宋</span>时，诗歌进一步发展，数量呈上升趋势。
+            而<span class="fontempa">元朝</span>由于大兴武学或诗词保存不完整等原因，诗词诗人数量下降。
+            到了<span class="fontempa">明清</span>，诗词重新兴起，以贴近生活为主，更在意人间疾苦。
+            <br>
+<!--            图中的流图形状像山川河流，代表着各朝代留存下的诗词数量，横轴则代表着时间。0刻度线处的船的大小则是现今记录下的诗人数量的映射。-->
           </p>
         </div>
       </div>
@@ -40,12 +47,11 @@ export default {
   name: "TimeRiver",
   methods: {
     init1() {
-      var myChart = echarts.init(document.getElementById('chart4'), vintage);
+      var myChart = echarts.init(document.getElementById('chart4'), 'vintage');
       // var svgimg ="M545.41,233.69L338.2,231.5l46.98-7.98c4.21-0.72,6.49-4.46,4.64-7.64L288.17,41.1,c-3.04-5.22-12.63-3.45-12.63,2.33v39.75c-0.23,0.21-0.45,0.43-0.66,0.69L182.65,197.3c-1.31,1.61-1.41,3.66-0.27,5.35l18.56,27.4,l-114.53-1.21c-5.29-0.06-7.76,5.77-3.73,8.81c13.79,10.41,29.63,22.41,57.95,32.13c65.91,22.64,135.31,21.12,175.98,20.21,c96.67-2.17,176.66-25.51,231.01-46.72C553.18,241.11,551.49,233.75,545.41,233.69z M275.53,230.84l-44.25-0.47,c3.92-16.36,8.12-33.73,10.98-42.14c10.89-32.07,21.8-56.65,33.28-79.03V230.84z"
       // 指定图表的配置项和数据
 
       //var svgimg ="path://M537.75,337.72C483.39,316.51,403.4,293.16,306.74,291c-40.67-0.91-110.07-2.43-175.98,20.21,c-28.32,9.73-44.15,21.72-57.95,32.13c-4.02,3.04-1.55,8.87,3.73,8.81l114.53-1.21l-18.56,27.4c-1.14,1.69-1.04,3.74,0.27,5.35,l92.23,113.44c0.2,0.25,0.43,0.48,0.66,0.69v39.75c0,5.78,9.59,7.55,12.63,2.33l101.66-174.78c1.85-3.17-0.43-6.92-4.64-7.64,l-46.98-7.98l207.21-2.19C541.61,347.25,543.31,339.89,537.75,337.72z M265.66,471.79c-11.48-22.38-22.39-46.97-33.28-79.03,c-2.85-8.41-7.05-25.78-10.98-42.14l44.25-0.47V471.79z M545.41,233.69L338.2,231.5l46.98-7.98c4.21-0.72,6.49-4.46,4.64-7.64L288.17,41.1,c-3.04-5.22-12.63-3.45-12.63,2.33v39.75c-0.23,0.21-0.45,0.43-0.66,0.69L182.65,197.3c-1.31,1.61-1.41,3.66-0.27,5.35l18.56,27.4,l-114.53-1.21c-5.29-0.06-7.76,5.77-3.73,8.81c13.79,10.41,29.63,22.41,57.95,32.13c65.91,22.64,135.31,21.12,175.98,20.21,c96.67-2.17,176.66-25.51,231.01-46.72C553.18,241.11,551.49,233.75,545.41,233.69z M275.53,230.84l-44.25-0.47,c3.92-16.36,8.12-33.73,10.98-42.14c10.89-32.07,21.8-56.65,33.28-79.03V230.84z"
-      // var svgimg = "image://../../assets/images/boat.png"
       var svgimg = "image://static/html/timeriver/img/boat.png"
       var option = {
         dataset: {
@@ -81,7 +87,11 @@ export default {
             fontFamily: 'kxfont'
           }
         },
-
+        // axisLine: {
+        //   lineStyle: {
+        //     color: "#0E8BFF",
+        //   },
+        // },
         emphasis: {
           scale: true,
           itemStyle: {
@@ -100,15 +110,24 @@ export default {
             symbolSize: [10, 43]
           }
         },
+        axisLine: {
+          //坐标轴轴线相关设置
+          lineStyle: {
+            color: '#262571'
+          }
+        },
         xAxis: {
           show: false,
-          min: 300,
+          min: 260,
           max: 1970
         },
         yAxis: {
-          show: false,
-          min: -10,
-          max: 10,
+          // show: false,
+          min: -300000,
+          max: 300000,
+          splitLine: {
+            show: false
+          }
         },
         series: {
           type: 'scatter'
@@ -120,7 +139,7 @@ export default {
       };
     },
     init2() {
-      var myChart = echarts.init(document.getElementById('chart3'), vintage);
+      var myChart = echarts.init(document.getElementById('chart3'), 'vintage');
 
       // 指定图表的配置项和数据
       //     var chartDom = document.getElementById('main');
@@ -171,7 +190,7 @@ export default {
                 colorStops: [
                   {
                     offset: 0,
-                    color: '#568595' // 0% 处的颜色
+                    color: '#558a9a' // 0% 处的颜色
                   },
 
                   // {
@@ -180,7 +199,7 @@ export default {
                   // },
                   {
                     offset: 0.492,
-                    color: 'rgba(185,177,169,0.4)' // 0% 处的颜色
+                    color: 'rgba(204,201,196,0.4)' // 0% 处的颜色
                   },
                   {
                     offset: 0.5,
@@ -188,7 +207,7 @@ export default {
                   },
                   {
                     offset: 0.508,
-                    color: 'rgba(128, 128, 128,0.1)' // 0% 处的颜色
+                    color: 'rgba(201,201,201,0.1)' // 0% 处的颜色
                   },
                   // {
                   //   offset: 0.75,
@@ -196,7 +215,7 @@ export default {
                   // },
                   {
                     offset: 1,
-                    color: 'rgba(92,130,151,0.3)' // 100% 处的颜色
+                    color: 'rgba(96,139,154,0.3)' // 100% 处的颜色
                   }
                 ],
                 global: false // 缺省为 false
@@ -227,12 +246,15 @@ export default {
               ['1970/01/01', 28219, ''],
 
               // ['1150/01/01', 19058, ''],
+
+
               // ['-0500/01/01', 570, ''],
               // ['-0100/01/01', 363, '']
             ]
           }
         ]
       };
+
       myChart.setOption(option);
       window.onresize = function () {
         myChart.resize();
@@ -254,6 +276,14 @@ export default {
 
 <style scoped>
 @import "../../assets/css/rtheme.css";
+/*.main{*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  overflow-y: scroll;*/
+/*  width: 100%;*/
+/*  height: 900px;*/
+/*  margin-top: -450px;*/
+/*}*/
 
 #riverBox {
   display: flex;

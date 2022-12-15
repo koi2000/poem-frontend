@@ -10,11 +10,10 @@
         </div>
 
         <div class="slide" id="slide1">
-<!--          <iframe src="static/html/timeriver/themeriver-scatter.html" width="100%" height="100%" frameborder="0"-->
-<!--                  scrolling="auto"></iframe>-->
-          <div>
+          <div class="animate__animated animate__fadeIn" style="animation-duration: 3s">
             <TimeRiver v-if="this.index===1"/>
           </div>
+<!--          <TimeRiver v-if="this.index===1"/>-->
         </div>
 
         <div class="slide" id="slide2">
@@ -42,8 +41,6 @@
         </div>
 
         <div class="slide" id="slide6">
-          <!--          <iframe src="static/html/visual/sun.html" width="100%" height="100%" frameborder="0"-->
-          <!--                  scrolling="auto"></iframe>-->
           <Sun/>
         </div>
 
@@ -52,19 +49,11 @@
         </div>
 
         <div class="slide" id="slide8">
-          <!--          <div ref="react"></div>-->
-          <!--          <Three/>-->
-          <!--          <react :component="component" :message="message"/>-->
-          <h1>诗词类型词云图</h1>
+          <h1>边塞诗词云图</h1>
           <div style="font-family: 'kxfont';">
-
-<!--            <iframe src="https://koi2000.top/" width="100%" height="800px" style="margin-top: -100px" frameborder="0"-->
-<!--                    scrolling="auto"></iframe>-->
             <iframe src="https://koi2000.top/" width="100%" height="800px" style="margin-top: -100px" frameborder="0"
                     scrolling="auto"></iframe>
           </div>
-          <!--          <Three/>-->
-          <!--          <my-react-component :message="message" @onMyEvent="parentClickHandle"/>-->
         </div>
 
         <div class="slide">
@@ -216,11 +205,11 @@ export default {
     },
     afterSlideLoad(anchorLink, index, slideIndex, direction, nextSlideIndex) {
       this.index = slideIndex.index
-      if (slideIndex.index === 0) {
-        // 向ID为P1的元素添加class，animated是animate.css激活动画必须加的class,后面跟的是动画class
-        console.log("创建" + index.index);
-        $('#slide0').addClass('animated zoomIn');
-      }
+      // if (slideIndex.index === 0) {
+      //   // 向ID为P1的元素添加class，animated是animate.css激活动画必须加的class,后面跟的是动画class
+      //   console.log("创建" + index.index);
+      //   $('#slide0').addClass('animated zoomIn');
+      // }
       if (slideIndex.index === 1) {
         console.log("创建" + index.index);
         $('#slide1').addClass('animated zoomIn');
@@ -240,11 +229,11 @@ export default {
       }
     },
     onSlideLeave(anchorLink, index, slideIndex, direction, nextSlideIndex) {
-      if (slideIndex.index === 0) {
-        // 向ID为P1的元素添加class，animated是animate.css激活动画必须加的class,后面跟的是动画class
-        console.log("创建" + index.index);
-        $('#slide0').removeClass('animated zoomIn');
-      }
+      // if (slideIndex.index === 0) {
+      //   // 向ID为P1的元素添加class，animated是animate.css激活动画必须加的class,后面跟的是动画class
+      //   console.log("创建" + index.index);
+      //   $('#slide0').removeClass('animated zoomIn');
+      // }
       if (slideIndex.index === 1) {
         console.log("创建" + index.index);
         $('#slide1').removeClass('animated zoomIn');
