@@ -2,10 +2,11 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  font-family: "Roboto";
-  list-style: none;
-  box-sizing: border-box;
-  background: #000;
+  overflow-y: hidden;
+  /*font-family: "Roboto";*/
+  /*list-style: none;*/
+  /*box-sizing: border-box;*/
+  /*background: #000;*/
 }
 
 nav {
@@ -45,12 +46,12 @@ section {
 }
 
 .bg img {
-  width: 130%;
-  height: 80vh;
+  width: 130vw;
+  height: 100vh;
   /* filter: brightness(0.6); */
-  margin-top: 0%;
-  margin-left: -5%;
-  margin-right: -5%;
+  margin-top: -20vh;
+  margin-left: -5vw;
+  /*margin-right: -5%;*/
 
 }
 
@@ -73,16 +74,31 @@ section {
   margin-left: 7%;
 
 }
+@font-face {
+  font-family: 'kxfont';
+  src: url('康熙字典体完整版本.TTF');
+}
+
+* {
+  font-family: 'kxfont';
+}
 
 .text h1 {
+  font-family: "kxfont";
   /* font-family: "AlphaCentauri" !important; */
   font-size: 5vw;
-  color: #fff;
+  color: #1f1f1f;
   letter-spacing: 20px;
   position: absolute;
-  top: 35vh;
-  left: 34vw;
+  text-align: center;
+  margin-right:50vw;
+  margin-top:10vw;
+  /*margin:0 auto;*/
+  margin-left:26vw;
+  /*top: 35vh;*/
+  /*left: 34vw;*/
   width: 1000px;
+  text-shadow: 3px 3px 6px #bdbdbd;
 }
 
 .sun {
@@ -93,10 +109,10 @@ section {
 
 .earth img {
   width: 120vw;
-  height: 100vh;
+  height: 120vh;
   /* filter: brightness(1.6); */
-  margin-top: -5%;
-  margin-left: -15%;
+  margin-top: -20vh;
+  margin-left: -6vw;
   z-index: 1;
   /* filter: brightness(1.2); */
 }
@@ -113,7 +129,7 @@ section {
 
 .boat {
   margin-left: 38%;
-  margin-top: 40%;
+  margin-top:37%;
 
 
 }

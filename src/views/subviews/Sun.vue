@@ -1,24 +1,46 @@
 <template>
+  <div class="animate__animated animate__fadeIn " style="animation-duration: 3s">
   <body>
   <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-  <div id="title" style="width: 1800px;height: 100px;align-content: center">
+<!--  <div style="margin-top: 10% ">-->
+  <div class="main2">
+    <div class="leftcolumn2" >
+      <div id="main" style="width: 80%;height:800px;margin-left: 10%;float: left "></div>
+    </div>
+    <div class="header2" >
+      <div class="uprow">
+<!--    <div id="title" style="width: 1800px;height: 100px;align-content: center">-->
+        <div style="width: 500px; margin-right: 40%;margin-left: -20%;margin-top: 20%">
     <h1>诗词聚类</h1>
-  </div>
+        </div>
+    </div>
+      <div class="downrow">
   <div id="value" style="width: 100%;height: 800px;">
-    <div id="main" style="width: 45%;height:600px;float: left"></div>
+
     <div style="width: 15%;float: left"></div>
-    <div id="text" style="width: 40%;height: 800px;float: left">
-      <p id="demo0" style="height:100px;font-size: 20px">
+
+    <div id="text" style="margin-top: 17% ;margin-right: 20%">
+      <div class="up">
+      <p id="demo0" style="font-size: 20px">
         中国古典诗词中的情感美是古典诗词内涵美的一项重要内容。这种情感美主要包括五种情感:即深沉的爱国情、浓烈的思乡情、执着的男女情、美好的朋友情和温馨的骨肉情。中国古典诗词中所蕴含的这种崇高伟大的情感美，对于我们今天建立幸福、繁荣、稳定的和谐社会，具有十分重要的现实意义。
       </p>
+    </div>
+      <div class="down">
       <img id="demo1" src="static/html/visual/img/vn.png" style="height: 500px;width: 600px;float: left">
+      </div>
     </div>
   </div>
+    </div>
+
+  </div>
+
+  </div>
   </body>
+  </div>
 </template>
 
 <script>
-
+// import "../../assets/css/lrtheme.css";
 import * as echarts from "../../assets/js/py/echarts.min";
 export default {
   name: "Sun",
@@ -113,14 +135,14 @@ export default {
         }
       ];
       var option = {
-        visualMap: {
-          type: 'continuous',
-          min: 0,
-          max: 20,
-          inRange: {
-            color: ['#2F93C8', '#AEC48F', '#FFDB5C', '#F98862']
-          },
-        },
+        // visualMap: {
+        //   type: 'continuous',
+        //   min: 0,
+        //   max: 20,
+        //   inRange: {
+        //     color: ['#2F93C8', '#AEC48F', '#FFDB5C', '#F98862']
+        //   },
+        // },
         series: {
           type: 'sunburst',
           // highlightPolicy: 'ancestor',
@@ -186,6 +208,36 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
+@import "../../assets/css/lrtheme.css";
+.header2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* border: 1em;
+  border-style:solid; */
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  /*margin-top: -10%;*/
+  /*height: auto;*/
+  /* margin: auto; */
+}
+.uprow{
+  flex:1;
+  width: 500px;
+}
+.downrow{
+  flex:1;
+  display: flex;
+  /*margin-top: -16%;*/
+}
 
+.up{
+
+  flex:1
+}
+.down{
+
+  flex:1
+}
 </style>

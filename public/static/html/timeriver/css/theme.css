@@ -6,7 +6,11 @@
   * {
     font-family: 'kxfont';
   }
-
+.fontempa{
+  color: #A31B28;
+  font-weight: bold;
+  font-size: larger
+}
   body {
     background-color: #F6F6F4;
     background-image: url("https://www.transparenttextures.com/patterns/rice-paper-2.png");

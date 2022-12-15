@@ -3,12 +3,12 @@
     <!-- 【步骤1】 创建容器 -->
     <!--    <div class="g6-x" id="containerG6" ref="containerG6"></div>-->
     <div class="main2">
-      <div class="leftcolumn2">
+      <div class="leftcolumn">
         <div class="animate__animated animate__fadeIn" style="animation-duration: 3s">
           <div id="container" style="height: 98vh; border:5px solid #ffffff;margin-left: 1% ;margin-right: 1% "/>
         </div>
       </div>
-      <div class="rightcolumn2">
+      <div class="rightcolumn">
 
 
         <div class="introduction">
@@ -52,7 +52,7 @@
 
 /* Left column */
 .leftcolumn {
-  flex: 1.6;
+  flex: 1.4;
   /*border: 1em;*/
   /*border-style:solid;*/
   /* margin: auto; */
