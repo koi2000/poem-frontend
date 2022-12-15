@@ -26,7 +26,7 @@
       </p>
     </div>
       <div class="down">
-      <img id="demo1" src="static/html/visual/img/vn.png" style="height: 500px;width: 600px;float: left">
+      <img id="demo1" src="static/html/visual/img/vn.png" style="height: 700px;width: 700px;margin-left: 1vw;margin-top: -5vw">
       </div>
     </div>
   </div>
