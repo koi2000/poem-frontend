@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-f42d9a3c"],{"0f46":function(t,n,o){"use strict";o.r(n);var e=function(){var t=this,n=t._self._c;return n("div",{attrs:{id:"atroot"}},[n("WordCloud")],1)},u=[],a=o("393a"),c={name:"StoryPage",components:{WordCloud:a["a"]},data(){return{}},mounted(){},methods(){}},d=c,r=(o("1fe3"),o("0c7c")),s=Object(r["a"])(d,e,u,!1,null,"2030336b",null);n["default"]=s.exports},"0f8d":function(t,n,o){},"1fe3":function(t,n,o){"use strict";o("0f8d")}}]);
-//# sourceMappingURL=chunk-f42d9a3c.ada531d4.js.map

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ECharts 实例</title>
+  <!-- 引入 echarts.js -->
+  <script src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+  <link rel="stylesheet" href="../css/theme.css" />
+</head>
+<body>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="title" style="width: 1800px;height: 100px;align-content: center">
+  <h1>古诗情感</h1>
+</div>
+<div id="value" style="width: 100%;height: 800px;">
+  <div id="main" style="width: 45%;height:800px;float: left"></div>
+  <div class="hide_img"><img src="../image/1.jpg"></div>
+  <div style="width: 15%;float: left"></div>
+  <div id="text" style="width: 40%;height: 800px;float: left">
+    <p style="font-size: 20px">
+      中国古典诗词中的情感美是古典诗词内涵美的一项重要内容。这种情感美主要包括五种情感:即深沉的爱国情、浓烈的思乡情、执着的男女情、美好的朋友情和温馨的骨肉情。中国古典诗词中所蕴含的这种崇高伟大的情感美，对于我们今天建立幸福、繁荣、稳定的和谐社会，具有十分重要的现实意义。
+    </p>
+    <p style="font-size: 20px">
+      什么是情感？"现代汉语词典"说:"情感是对外界刺激肯定或否认的心理反响，如喜欢、愤怒、悲伤、恐惧、爱慕、厌恶等。”只要是正常的人，他就一定有情感。只要有情感，他就要通过各种不同的方式予以表达。中国古典诗歌就是古代人们抒发情感的一个最为有效的工具。诗歌的本质是抒情的。陆机在他的"文赋"中说:"诗缘情而绮靡”。我们在阅读中国古典诗歌时，往往能够感到真挚情感给我们带来的审美愉悦和震憾人心的力量。
+    </p>
+  </div>
+</div>
+<script type="text/javascript">
+  // 基于准备好的dom，初始化echarts实例
+  var myChart = echarts.init(document.getElementById('main'));
+
+  var data = [{
+      value:20,
+      name:"喜",
+      itemStyle: {
+        color:"rgba(13,180,218,0.78)"
+      },
+      children:[{
+        name:"情爱婚姻之情",
+        value:12,
+        itemStyle:{
+          color:"rgba(150,218,13,0.71)"
+        }
+      },{
+        name:"闲适恬淡之情",
+        value:8,
+        itemStyle: {
+          color:"rgba(218,85,13,0.95)"
+        }
+      }]
+    },
+      {
+        value:15,
+        name:"哀",
+        itemStyle: {
+          color: "rgba(218,201,13,0.78)"
+        },
+        children: [{
+          name:"悲伤",
+          value:9,
+          itemStyle:{
+            color: "rgba(13,218,139,0.71)"
+          },
+          children:[{
+            name:"惆怅送别之情",
+            value:5,
+            itemStyle:{
+              color:"rgb(218,13,75)"
+            }
+          },{
+            name:"思想怀远之情",
+            value: 4,
+            itemStyle: {
+              color: "rgb(13,119,225)"
+            }
+          }
+          ]
+        },
+          {
+            name:"抒怀",
+            value: 6,
+            itemStyle: {
+              color: "rgba(13,218,102,0.93)"
+            },
+            children:[{
+              name:"咏物感遇之情",
+              value:4,
+              itemStyle:{
+                color:"rgba(218,44,5)"
+              }
+            },{
+              name:"边塞行役之情",
+              value:2,
+              itemStyle: {
+                color: "rgba(218,207,5,0.78)"
+              }
+            }]
+          }]
+      }
+  ];
+  option = {
+    visualMap: {
+      type: 'continuous',
+      min: 0,
+      max: 20,
+      inRange: {
+        color: ['#2F93C8', '#AEC48F', '#FFDB5C', '#F98862']
+      },
+    },
+    series: {
+      type: 'sunburst',
+      // highlightPolicy: 'ancestor',
+      data: data,
+      radius: [60, '90%'],
+      itemStyle: {
+        borderRadius: 7,
+        borderWidth: 2,
+      },
+      label: {
+        rotate: 'radial',
+        textStyle: {
+          fontSize:20,
+          fontFamily:"kxfont",
+        }
+      }
+    }
+  };
+
+
+  // 使用刚指定的配置项和数据显示图表。
+  myChart.setOption(option);
+  myChart.on('mouseover', function(param) {
+    console.log(param)
+    img1.onmouseout = function () {
+        img1.src = "../image/2.png";
+        img1.wi
+    }
+
+  });
+</script>
+</body>
+</html>
