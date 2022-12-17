@@ -100,14 +100,17 @@ export default {
           }
         },
         visualMap: {
-          show: false,
-          dimension: 2, // 指向第三列（列序号从 0 开始记，所以设置为 2）。
-          min: 2, // 需要给出数值范围，最小数值。
-          max: 15, // 需要给出数值范围，最大数值。
+          left:20,
+          // show: false,
+          dimension: 3, // 指向第三列（列序号从 0 开始记，所以设置为 2）。
+          min: 50, // 需要给出数值范围，最小数值。
+          max: 10000, // 需要给出数值范围，最大数值。
+          calculable: true,
+          text: ["诗人数量"],
           inRange: {
             color: ['rgba(41,45,48, 0.2)', 'rgba(41,45,48, 0.8)'],
             // 气泡尺寸：5 像素到 60 像素。
-            symbolSize: [10, 43]
+            symbolSize: [20, 40]
           }
         },
         axisLine: {
@@ -125,6 +128,7 @@ export default {
           // show: false,
           min: -300000,
           max: 300000,
+          name:"诗歌数量",
           splitLine: {
             show: false
           }
@@ -163,6 +167,7 @@ export default {
           axisTick: {},
           axisLabel: {},
           type: 'time',
+          name:"年份",
           axisPointer: {
             animation: false,
             label: {
@@ -177,6 +182,7 @@ export default {
             }
           }
         },
+
         series: [
           {
             type: 'themeRiver',
@@ -286,10 +292,11 @@ export default {
 /*}*/
 
 #riverBox {
+  margin-top: 10vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
 }
 
 </style>

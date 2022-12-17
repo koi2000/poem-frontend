@@ -151,17 +151,22 @@ export default {
                 show: true,
                 min: 0,
                 max: 1030,
-                left: 100,
-                bottom: 50,
-                splitNumber: 5,
+
+                // bottom: 50,
+                // splitNumber: 5,
                 seriesIndex: 0,
-                zlevel: 2,
-                hoverLink: true,
-                // text:['名胜古迹'],
+                orient: 'vertical',
+                left: 80,
+
+                calculable: true,
+                // zlevel: 2,
+                // hoverLink: true,
+                text:['名胜古迹数'],
                 // borderColor:"#394e5d",                         //边框颜色
                 // borderWidth:1,
                 inRange: {
-                  color: ['#76a89f', '#366d75', '#175675']
+                  color: ['#76a89f', '#366d75', '#175675'],
+
                 },
                 textStyle: {
                   color: '#213d3d'
@@ -172,25 +177,29 @@ export default {
                 min: 0,
                 max: 6000,
                 seriesIndex: 1,
-                pieces: [
-                  {min: 4800, itemSymbol: "rect",itemWidth:30},
-                  {min: 1800, max: 2400, itemSymbol: "circle",itemWidth: 40},
-                  {min: 1200, max: 1800, itemSymbol: "circle",},
-                  {min: 600, max: 1200, itemSymbol: "triangle",},
-                  {max: 600}
-                ],
-                hoverLink: true,
-                left: -10,
-                bottom: 50,
-                splitNumber: 10,
-                zlevel: 0,
+                // dimension: 1,
+                orient: 'vertical',
+                left: 0,
+                // bottom: -6,
+                // top: 'center',
+                text: ['诗人数'],
+                calculable: true,
+                // inRange: {
+                //   color: ['#f2c31a', '#24b7f2']
+                // }
+                // hoverLink: true,
+                // left: -5,
+
+                // splitNumber: 10,
+                // zlevel: 0,
                 // itemWidth: [60, 20, 30, 40, 50],
                 // itemHeight: [60, 30, 40, 60, 70],
-                itemSymbol: "rect",
+                // itemSymbol: "rect",
                 // text:['诗人数量'],
                 inRange: {
                   // color: ['#72b9b2', '#2A7484', '#255B78']
-                  color: ['#a89496','#50141a']
+                  color: ['#a89496','#50141a'],
+                  symbolSize:[16, 40]
                 },
                 textStyle: {
                   color: '#213d3d'
@@ -258,9 +267,9 @@ export default {
                 name: '诗人数据',
                 type: 'scatter',
                 coordinateSystem: 'geo',
-                symbolSize: function (data) {
-                  return 3.5 * Math.log(data[2]);
-                },
+                // symbolSize: function (data) {
+                //   return 3.5 * Math.log(data[2]);
+                // },
 
                 label: {
                   normal: {
