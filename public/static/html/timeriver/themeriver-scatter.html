@@ -261,12 +261,12 @@
                 }
             },
             visualMap: {
-                show: false,
+                show: true,
                 dimension: 2, // 指向第三列（列序号从 0 开始记，所以设置为 2）。
                 min: 2, // 需要给出数值范围，最小数值。
                 max: 15, // 需要给出数值范围，最大数值。
                 inRange: {
-                    color: ['rgba(41,45,48, 0.2)', 'rgba(41,45,48, 0.8)'],
+                    // color: ['rgba(41,45,48, 0.2)', 'rgba(41,45,48, 0.8)'],
                     // 气泡尺寸：5 像素到 60 像素。
                     symbolSize: [10, 43]
                 }
@@ -286,6 +286,7 @@
                 // show: false,
                 min: -300000,
                 max: 300000,
+                text:"诗歌数量",
                 splitLine: {
                     show: false
                 }
