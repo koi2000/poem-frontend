@@ -87,7 +87,7 @@ section {
   font-family: "kxfont";
   /* font-family: "AlphaCentauri" !important; */
   font-size: 5vw;
-  color: #1f1f1f;
+  color: #343231;
   letter-spacing: 20px;
   position: absolute;
   text-align: center;
@@ -98,7 +98,7 @@ section {
   /*top: 35vh;*/
   /*left: 34vw;*/
   width: 1000px;
-  text-shadow: 3px 3px 6px #bdbdbd;
+  text-shadow: 4px 4px 5px rgba(168, 168, 168, 0.65);
 }
 
 .sun {
