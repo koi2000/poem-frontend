@@ -4,4 +4,10 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'kx';
+  src: url('../fonts/康熙字典体完整版本.TTF');
+  font-weight: normal;
+  font-style: normal;
+}
 /*# sourceMappingURL=xing.css.map */

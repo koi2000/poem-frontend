@@ -1,64 +1,5 @@
 <template>
   <div id="root">
-
-    <div class="wrap">
-      <div class="content">
-        <h1 id="head">诗词可视化与分析</h1>
-
-        <div>
-          <!--          <el-button type="primary" v-on:click="() => {-->
-          <!--      this.$router.push({path: '/GeneratePoem'})-->
-          <!--    }">诗词生成-->
-          <!--          </el-button>-->
-
-          <!--          <el-button type="primary" v-on:click="() => {-->
-          <!--      this.$router.push({path: '/QueryPoem'})-->
-          <!--    }">查找相似诗词-->
-          <!--          </el-button>-->
-
-          <!--          <el-button type="primary" v-on:click="() => {-->
-          <!--      this.$router.push({path: '/WordConnect'})-->
-          <!--    }">查看关联词-->
-          <!--          </el-button>-->
-
-          <!--          <el-button type="primary" v-on:click="() => {-->
-          <!--            this.$router.push({path: '/DashBoard'})}">DashBoard-->
-          <!--          </el-button>-->
-
-          <!--          <el-button type="primary" v-on:click="() => {-->
-          <!--            this.$router.push({path: '/temp'})}">temp-->
-          <!--          </el-button>-->
-
-          <!--          <el-button type="primary" v-on:click="() => {-->
-          <!--            this.$router.push({path: '/StoryPage'})}">StoryPage-->
-          <!--          </el-button>-->
-
-          <!--          <el-button type="primary" v-on:click="() => {-->
-          <!--            this.option = optionEnum.GeneratePoem}">诗词生成-->
-          <!--          </el-button>-->
-
-          <!--          <el-button type="primary" v-on:click="() => {-->
-          <!--            this.option = optionEnum.QueryPoem}">查找相似诗词-->
-          <!--          </el-button>-->
-
-          <!--          <el-button type="primary" v-on:click="() => {-->
-          <!--            this.option = optionEnum.WordConnect}">查看关联词-->
-          <!--          </el-button>-->
-        </div>
-      </div>
-    </div>
-    <!--    <WordCloud/>-->
-
-    <ChinaMap/>
-<!--    <HomePage/>-->
-    <Emotion/>
-    <!--    <TableauTest/>-->
-    <!--    <DashBoard v-if="option===optionEnum.DashBoard"/>-->
-
-
-    <!--    <GeneratePoem/>-->
-    <!--    <QueryPoem/>-->
-    <!--    <WordConnect/>-->
     <div id="choiceBox">
       <el-button type="info" plain style="color: black;width: 150px"
                  v-on:click="() => {this.option = optionEnum.GeneratePoem}">诗词生成
@@ -66,20 +7,16 @@
       <el-button type="info" plain style="color: black;width: 150px"
                  v-on:click="() => {this.option = optionEnum.QueryPoem}">查找相近诗词
       </el-button>
-      <el-button type="info" plain style="color: black;width: 150px"
-                 v-on:click="() => {this.option = optionEnum.WordConnect}">查看关联词
-      </el-button>
+<!--      <el-button type="info" plain style="color: black;width: 150px"-->
+<!--                 v-on:click="() => {this.option = optionEnum.WordConnect}">查看关联词-->
+<!--      </el-button>-->
       <el-button type="info" plain style="color: black;width: 150px" v-on:click="() => {this.option = optionEnum.None}">
         关闭
       </el-button>
-
     </div>
-
     <GeneratePoem v-if="this.option===optionEnum.GeneratePoem"/>
     <QueryPoem v-if="this.option===optionEnum.QueryPoem"/>
     <WordConnect v-if="this.option===optionEnum.WordConnect"/>
-<!--    <EmotionPlace/>-->
-
   </div>
 </template>
 
@@ -101,7 +38,8 @@ export default {
   name: "MainPage",
   components: {
     Emotion,
-    BarChart, ChinaMap, WordCloud, WorldCloud, TableauTest, WordConnect, QueryPoem, GeneratePoem, point},
+    BarChart, ChinaMap, WordCloud, WorldCloud, TableauTest, WordConnect, QueryPoem, GeneratePoem, point
+  },
   data() {
     return {
       option: "",
@@ -127,10 +65,10 @@ export default {
   /*flex-shrink: 0;*/
   flex-direction: column;
   align-items: center;
-  /*overflow-y: scroll;*/
+  overflow-y: scroll;
   top: 0;
-  /*height: 100%;*/
-  /*width: 100%;*/
+  height: 100vh;
+  width: 100%;
   /*top:1%;*/
 }
 

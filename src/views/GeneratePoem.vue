@@ -251,7 +251,7 @@ export default {
 }
 
 .sen {
-  font-family: 'xing';
+  font-family: 'kx';
   font-size: 25px;
   font-weight: 20;
   color: #555;

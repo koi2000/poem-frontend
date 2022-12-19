@@ -63,6 +63,12 @@
           </div>
         </div>
 
+        <div class="slide" id="slide-1">
+          <div>
+            <MainPage/>
+          </div>
+        </div>
+
 
         <!--        <div class="slide">-->
         <!--          <iframe src="static/html/visualization-master/cn.html" width="100%" height="100%" frameborder="0"-->
@@ -147,9 +153,11 @@ import D3Cloud from "@/views/D3Cloud";
 import React from 'react'
 import HomePage from "@/views/HomePage";
 import TimeRiver from "@/views/subviews/TimeRiver";
+import MainPage from "@/views/MainPage";
 
 export default {
   components: {
+    MainPage,
     TimeRiver,
     HomePage,
     WordCloud,
