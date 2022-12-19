@@ -20,4 +20,13 @@
 
 我们对于诗词数据进行了层次聚类，对绘制了其中部分类别的词云图，悬浮在旭日图的不同部分，词云和文字会发生变化。
 
+参考资料：
+
+https://gallery.pyecharts.org/#/Sankey/sankey_diagram
+https://gallery.pyecharts.org/#/Sunburst/drink_flavors
+
+参考pyecharts示例中的样式设计可视化。在阅读python代码的基础上，利用对应的echarts方法，在原有设计上改进或调整（包括属性设定、布局、交互、外观等），以更好的适应可视化任务。
+数据全部来自于词向量、分类器等模型，与原示例无关。
+
+
 [//]: # (git subtree push  --prefix dist origin gh-pages)
